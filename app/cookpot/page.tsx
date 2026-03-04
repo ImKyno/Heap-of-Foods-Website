@@ -1,8 +1,12 @@
 "use client"
 
-import { useState, useMemo } from "react"
-import recipes from "@/data/recipes_cookpot.json"
+import { useState, useMemo, useRef, useEffect } from "react"
 import { t } from "@/lib/i18n"
+import recipes from "@/data/recipes_cookpot.json"
+import Settings from "@/app/settings"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass, faFilter, faArrowDownAZ, faCircleChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const PERISH_MAP = {
   PERISH_SUPERFAST: 1440,
@@ -38,6 +42,21 @@ interface SortOptionProps {
   onChange: (val: string) => void
 }
 
+interface Recipe {
+  name: string;
+  health?: number;
+  hunger?: number;
+  sanity?: number;
+  priority?: number;
+  cooktime?: number;
+  spoilage?: number;
+  temperature?: number;
+  temperatureDuration?: number;
+  debuff?: boolean;
+  foodtype?: string;
+  stacksize?: number;
+}
+
 const SortOption = ({ value, label, current, onChange }: SortOptionProps) => (
   <label className="flex items-center gap-3 cursor-pointer text-sm text-zinc-300 hover:text-white transition-colors">
     <div
@@ -55,10 +74,9 @@ const SortOption = ({ value, label, current, onChange }: SortOptionProps) => (
 export default function CookPot() {
   const [selected, setSelected] = useState<any>(null)
 
-  const [sidebarOpen, setSidebarOpen] = useState(true)
-  const [filtersOpen, setFiltersOpen] = useState(true)
-  
-  const [sortingOpen, setSortingOpen] = useState(false)
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [sortingOpen, setSortingOpen] = useState(false);
+
   const [sortType, setSortType] = useState("default")
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc")
 
@@ -66,418 +84,317 @@ export default function CookPot() {
   const [filterDebuff, setFilterDebuff] = useState<boolean | null>(null)
   const [filterFoodType, setFilterFoodType] = useState<string | null>(null)
 
+  const [search, setSearch] = useState("")
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [highlightIndex, setHighlightIndex] = useState(0)
+
+  const inputRef = useRef<HTMLInputElement>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // FILTERED RECIPES
   const filteredRecipes = recipes.filter((recipe: any) => {
     if (filterTemp !== null) {
       if (filterTemp === "hot" && recipe.temperature <= 0) return false
       if (filterTemp === "cold" && recipe.temperature >= 0) return false
     }
-
     if (filterDebuff !== null) {
       if (recipe.debuff !== filterDebuff) return false
     }
-
     if (filterFoodType !== null) {
       if (recipe.foodtype !== filterFoodType) return false
     }
-
     return true
   })
 
+  // SORTED RECIPES
   const invertOrderFor = ["health", "hunger", "sanity"]
-
   const sortedRecipes = useMemo(() => {
     let arr = [...filteredRecipes]
-
     if (sortType === "default") return arr
-
     const isInverted = invertOrderFor.includes(sortType)
-
     const directionMultiplier =
-      sortDirection === "asc"
-        ? (isInverted ? -1 : 1)
-        : (isInverted ? 1 : -1)
-
+      sortDirection === "asc" ? (isInverted ? -1 : 1) : isInverted ? 1 : -1
     arr.sort((a: any, b: any) => {
       let valA: any
       let valB: any
-
       switch (sortType) {
         case "alphabet":
           valA = t(`recipes.${a.name}`) ?? ""
           valB = t(`recipes.${b.name}`) ?? ""
           return valA.localeCompare(valB) * directionMultiplier
-
         case "spoilage":
           valA = a.spoilage ?? 0
           valB = b.spoilage ?? 0
           break
-
         default:
           valA = a[sortType] ?? 0
           valB = b[sortType] ?? 0
           break
       }
-
       return (valA - valB) * directionMultiplier
     })
-
     return arr
   }, [filteredRecipes, sortType, sortDirection])
 
+  // SEARCHED RECIPES
+  const searchedRecipes = useMemo(() => {
+    if (!search.trim()) return []
+    return sortedRecipes
+      .filter((recipe: any) =>
+        t(`recipes.${recipe.name}`).toLowerCase().includes(search.toLowerCase())
+      )
+      .slice(0, 8)
+  }, [search, sortedRecipes])
+
+  // OUTSIDE CLICK
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        !inputRef.current?.contains(event.target as Node)
+      ) setSearchOpen(false)
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  // SCROLL TO CARD
+  const scrollToCard = (recipeName: string) => {
+    const element = document.getElementById(`recipe-${recipeName}`)
+    if (element) element.scrollIntoView({ behavior: "smooth", block: "center" })
+  }
+
+  const selectRecipe = (recipe: any) => {
+    setSearch("")
+    setSearchOpen(false)
+    setHighlightIndex(0)
+    scrollToCard(recipe.name)
+    setTimeout(() => setSelected(recipe), 300)
+  }
+
   return (
-  <div className="flex flex-1 bg-zinc-950 text-white">
-    {/* SIDEBAR */}
-    <aside
-      className={`
-        h-screen
-        sticky
-        top-0
-        bg-zinc-900
-        border-r border-zinc-800
-        transition-all duration-300
-        ${sidebarOpen ? "w-64" : "w-16"}
-      `}
-    >
-      {/* SCROLL CONTAINER */}
-      <div
-        className={`
-          h-full
-          overflow-y-scroll
-          overscroll-contain
-          hide-scrollbar
-          select-none
-          ${sidebarOpen ? "p-6" : "p-3"}
-        `}
-        style={{
-          scrollbarGutter: "stable"
-        }}
-      >
-        <div className="flex flex-col gap-4">
-          {sidebarOpen && (
-            <>
-            {/* FILTERS */}
-            <div className="flex flex-col">
-              <button
-                onClick={() => setFiltersOpen(!filtersOpen)}
-                className="
-                  w-full
-                  bg-zinc-800
-                  hover:bg-zinc-700
-                  rounded-xl
-                  px-4 py-3
-                  flex justify-between items-center
-                  font-bold
-                  tracking-wide
-                  transition
-                "
-              >
-                {t("filters.title")}
-                <span className="text-zinc-400">
-                  {filtersOpen ? "▲" : "▼"}
-                </span>
-              </button>
+    <div className="bg-zinc-950 text-white min-h-screen">
+    {/* PAGE TITLE */}
+    <h1 className="flex items-center justify-center gap-4 text-4xl font-bold p-2">
+    <img src="/icons/icon_cookpot.png" className="w-14 h-14 object-contain" />
+      <span>{t("title")}</span>
+    </h1>
 
-              <div
-                className={`
-                  overflow-hidden
-                  transition-all duration-300
-                  ${filtersOpen ? "max-h-[1200px] mt-3" : "max-h-0"}
-                `}
-              >
-                <div className="bg-zinc-800 border border-zinc-800 rounded-xl p-4 flex flex-col gap-4 font-bold">
-
-                  {/* TEMPERATURE */}
-                  <div className="flex flex-col gap-1">
-                    <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-400">
-                      <img src="/icons/icon_temperature.png" className="w-6 h-6" />
-                      {t("filters.temperature")}
-                    </div>
-
-                    <div className="flex flex-col gap-2 pl-1">
-                      <CheckboxFilter
-                        label={t("card.temperature.hot")}
-                        checked={filterTemp === "hot"}
-                        onChange={() =>
-                          setFilterTemp(filterTemp === "hot" ? null : "hot")
-                        }
-                      />
-                      <CheckboxFilter
-                        label={t("card.temperature.cold")}
-                        checked={filterTemp === "cold"}
-                        onChange={() =>
-                          setFilterTemp(filterTemp === "cold" ? null : "cold")
-                        }
-                      />
-                    </div>
-                  </div>
-
-                  <div className="w-full h-[2px] bg-white/100" />
-
-                  {/* FOODTYPE */}
-                  <div className="flex flex-col gap-1">
-                    <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-400">
-                      <img src="/icons/icon_foodtype.png" className="w-6 h-6" />
-                      {t("filters.foodtype")}
-                    </div>
-
-                    <div className="flex flex-col gap-2 pl-1">
-                      {[...new Set(recipes.map((r: any) => r.foodtype))]
-                        .filter(Boolean)
-                        .map((type) => (
-                          <CheckboxFilter
-                            key={type}
-                            label={t(`foodtypes.${type}`)}
-                            checked={filterFoodType === type}
-                            onChange={() =>
-                              setFilterFoodType(
-                                filterFoodType === type ? null : type
-                              )
-                            }
-                          />
-                        ))}
-                    </div>
-                  </div>
-
-                  <div className="w-full h-[2px] bg-white/100" />
-
-                  {/* DEBUFF */}
-                  <div className="flex flex-col gap-1">
-                    <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-400">
-                      <img src="/icons/icon_debuff.png" className="w-6 h-6" />
-                      {t("filters.debuff.title")}
-                    </div>
-
-                    <div className="flex flex-col gap-2 pl-1">
-                      <CheckboxFilter
-                        label={t("filters.debuff.hasdebuff")}
-                        checked={filterDebuff === true}
-                        onChange={() =>
-                          setFilterDebuff(filterDebuff === true ? null : true)
-                        }
-                      />
-                    </div>
-                  </div>
-
-                  <div className="w-full h-[2px] bg-white/100" />
-
-                  {/* CLEAR BUTTON */}
-                  <button
-                    onClick={() => {
-                      setFilterTemp(null)
-                      setFilterFoodType(null)
-                      setFilterDebuff(null)
-                    }}
-                    className="
-                      bg-zinc-700
-                      hover:bg-red-700
-                      rounded-lg
-                      py-2
-                      text-sm
-                      font-bold
-                      transition
-                    "
-                  >
-                    {t("filters.clear")}
-                  </button>
-
-                </div>
-              </div>
-            </div>
-            {/* SORT ORDER */}
-            <div className="flex flex-col">
-              <button
-                onClick={() => setSortingOpen(!sortingOpen)}
-                className="
-                  w-full
-                  bg-zinc-800
-                  hover:bg-zinc-700
-                  rounded-xl
-                  px-4 py-3
-                  flex justify-between items-center
-                  font-bold
-                  tracking-wide
-                  transition
-                "
-              >
-                {t("sorting.title")}
-                <span className="text-zinc-400">
-                  {sortingOpen ? "▲" : "▼"}
-                </span>
-              </button>
-
-              <div
-                className={`
-                  overflow-hidden
-                  transition-all duration-300
-                  ${sortingOpen ? "max-h-[1200px] mt-3" : "max-h-0"}
-                `}
-              >
-                <div className="bg-zinc-800 border border-zinc-800 rounded-xl p-4 flex flex-col gap-4 font-bold">
-
-                  {/* ASC / DESC */}
-                  <div className="flex flex-col gap-1">
-                    <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-400">
-                      <img src="/icons/icon_priority.png" className="w-6 h-6" />
-                        {t("sorting.directiontype")}
-                      </div>
-                  
-                    <div className="flex flex-col gap-2 pl-1">
-                      <CheckboxFilter
-                        label={t("sorting.direction.up")}
-                        checked={sortDirection === "asc"}
-                        onChange={() => 
-                          setSortDirection("asc")
-                        }
-                      />
-                      <CheckboxFilter
-                        label={t("sorting.direction.down")}
-                        checked={sortDirection === "desc"}
-                        onChange={() => 
-                          setSortDirection("desc")
-                        }
-                      />
-                    </div>
-                  </div>
-
-                  <div className="w-full h-[2px] bg-white/100" />
-
-                  <div className="flex flex-col gap-1">
-                    <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-400">
-                      <img src="/icons/icon_debuff.png" className="w-6 h-6" />
-                        {t("sorting.ordertype")}
-                      </div>
-
-                    <div className="flex flex-col gap-2 pl-1">
-                      <CheckboxFilter
-                        label={t("sorting.type.default")}
-                        checked={sortType === "default"}
-                        onChange={() => setSortType("default")}
-                      />
-                      <CheckboxFilter
-                        label={t("sorting.type.alphabet")}
-                        checked={sortType === "alphabet"}
-                        onChange={() => setSortType("alphabet")}
-                      />
-                      <CheckboxFilter
-                        label={t("sorting.type.health")}
-                        checked={sortType === "health"}
-                        onChange={() => setSortType("health")}
-                      />
-                      <CheckboxFilter
-                        label={t("sorting.type.hunger")}
-                        checked={sortType === "hunger"}
-                        onChange={() => setSortType("hunger")}
-                      />
-                      <CheckboxFilter
-                        label={t("sorting.type.sanity")}
-                        checked={sortType === "sanity"}
-                        onChange={() => setSortType("sanity")}
-                      />
-                      <CheckboxFilter
-                        label={t("sorting.type.priority")}
-                        checked={sortType === "priority"}
-                        onChange={() => setSortType("priority")}
-                      />
-                      <CheckboxFilter
-                        label={t("sorting.type.cooktime")}
-                        checked={sortType === "cooktime"}
-                        onChange={() => setSortType("cooktime")}
-                      />
-                      <CheckboxFilter
-                        label={t("sorting.type.spoilage")}
-                        checked={sortType === "spoilage"}
-                        onChange={() => setSortType("spoilage")}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="w-full h-[2px] bg-white/100" />
-
-                  {/* RESET BUTTON */}
-                  <button
-                    onClick={() => {
-                      setSortType("default")
-                      setSortDirection("asc")
-                    }}
-                    className="
-                      bg-zinc-700
-                      hover:bg-red-700
-                      rounded-lg
-                      py-2
-                      text-sm
-                      font-bold
-                      transition
-                    "
-                  >
-                    {t("sorting.clear")}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </>
-          )}
-        </div>
+  {/* STICKY SEARCH + FILTER + SORT + BACK TO TOP */}
+  <div className="sticky top-0 z-40 bg-zinc-950 border-b border-zinc-800 p-3 flex flex-col items-center gap-4">
+    {/* SEARCH */}
+    <div className="relative w-[400px] mx-auto">
+      <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-zinc-400">
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
       </div>
-    </aside>
- 
-      {/* MAIN CONTENT */}
-      <main className="flex-1 p-10 select-none">
-        <div className="flex items-center gap-3 mb-10">
-          <img
-            src="/icons/icon_cookpot.png"
-            className="w-14 h-14 object-contain"
-          />
-          <h1 className="text-4xl font-bold">{t("title")}</h1>
-        </div>
-
-        <div className="grid grid-cols-4 gap-5 font-bold">
-          {sortedRecipes.map((recipe, index) => (
+      <input
+        ref={inputRef}
+        type="text"
+        placeholder={t("search.title")}
+        value={search}
+        onChange={(e) => {
+          setSearch(e.target.value)
+          setSearchOpen(true)
+          setHighlightIndex(0)
+        }}
+        onFocus={() => setSearchOpen(true)}
+        onKeyDown={(e) => {
+          if (!searchedRecipes.length) return
+            if (e.key === "ArrowDown") {
+              e.preventDefault()
+              setHighlightIndex((prev) =>
+              prev < searchedRecipes.length - 1 ? prev + 1 : 0
+            )
+          }
+          if (e.key === "ArrowUp") {
+            e.preventDefault()
+            setHighlightIndex((prev) =>
+              prev > 0 ? prev - 1 : searchedRecipes.length - 1
+            )
+          }
+          if (e.key === "Enter") {
+            e.preventDefault()
+            selectRecipe(searchedRecipes[highlightIndex])
+          }
+        }}
+        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-10 py-3 text-white italic focus:outline-none focus:border-zinc-700 transition"
+      />
+      {searchOpen && search && (
+        <div
+          ref={dropdownRef}
+          className="absolute top-full mt-2 w-full bg-zinc-900 border border-zinc-700 rounded-xl shadow-xl max-h-80 overflow-y-auto z-50"
+        >
+          {searchedRecipes.length === 0 && (
+            <div className="px-4 py-3 text-sm text-zinc-400 italic">{t("search.notfound")}</div>
+          )}
+          {searchedRecipes.map((recipe, idx) => (
             <div
-              key={index}
-              onClick={() => setSelected(recipe)}
-              className="bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition"
+              key={recipe.name}
+              onClick={() => selectRecipe(recipe)}
+              className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition ${
+                highlightIndex === idx ? "bg-zinc-800" : "hover:bg-zinc-800"
+              }`}
             >
-              <img
-                src={`/foods_cookpot/${recipe.name}.png`}
-                alt={recipe.name}
-                className="w-24"
-              />
-
-              <h2 className="text-center font-semibold text-lg">
-                {t(`recipes.${recipe.name}`)}
-              </h2>
-
-              <div className="w-full h-[2px] bg-white/100" />
-
-              <div className="flex items-center gap-2 flex-wrap justify-center">
-                {recipe.foodtype && <FoodType type={recipe.foodtype} />}
-
-                {recipe.temperature != null && (
-                  <TopEffect
-                    icon="/icons/icon_temperature.png"
-                    value={
-                      recipe.temperature > 0
-                        ? t("card.temperature.hot")
-                        : t("card.temperature.cold")
-                    }
-                    tooltip={t("tooltips.temperature")}
-                  />
-                )}
-
-                {recipe.debuff && (
-                  <TopEffect
-                    icon="/icons/icon_debuff.png"
-                    value={t("card.debuff.hasEffect")}
-                    tooltip={t("tooltips.debuff")}
-                    enableTooltip={false}
-                  />
-                )}
-              </div>
+              <img src={`/foods_cookpot/${recipe.name}.png`} className="w-10 h-10 object-contain" />
+              <span className="text-sm font-semibold">{t(`recipes.${recipe.name}`)}</span>
             </div>
           ))}
         </div>
-      </main>
-      {/* MODAL */}
+      )}
+    </div>
+    <div className="flex gap-4 select-none">
+      {/* FILTER */}
+        <div className="relative">
+          <button
+            onClick={() => setFiltersOpen(!filtersOpen)}
+            className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-xl font-bold flex items-center gap-2"
+          >
+            <FontAwesomeIcon icon={faFilter} />
+            {t("filters.title")}
+          </button>
+            {filtersOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[300px] bg-zinc-900 border border-zinc-700 rounded-xl p-4 mt-2 z-50 flex flex-col gap-4 font-bold">
+                <DropdownGroup title={t("filters.temperature")} icon="/icons/icon_temperature.png">
+                  <CheckboxFilter
+                    label={t("card.temperature.hot")}
+                    checked={filterTemp === "hot"}
+                    onChange={() => setFilterTemp(filterTemp === "hot" ? null : "hot")}
+                  />
+                  <CheckboxFilter
+                    label={t("card.temperature.cold")}
+                    checked={filterTemp === "cold"}
+                    onChange={() => setFilterTemp(filterTemp === "cold" ? null : "cold")}
+                  />
+                </DropdownGroup>
+
+                <div className="w-full h-1 bg-white/100" />
+
+                <DropdownGroup title={t("filters.foodtype")} icon="/icons/icon_foodtype.png">
+                  {[...new Set(recipes.map((r: any) => r.foodtype))]
+                  .filter(Boolean)
+                  .map((type) => (
+                    <CheckboxFilter
+                      key={type}
+                      label={t(`foodtypes.${type}`)}
+                      checked={filterFoodType === type}
+                      onChange={() => setFilterFoodType(filterFoodType === type ? null : type)}
+                    />
+                  ))}
+                </DropdownGroup>
+
+                <div className="w-full h-1 bg-white/100" />
+
+                <DropdownGroup title={t("filters.debuff.title")} icon="/icons/icon_debuff.png">
+                  <CheckboxFilter
+                    label={t("filters.debuff.hasdebuff")}
+                    checked={filterDebuff === true}
+                    onChange={() => setFilterDebuff(filterDebuff === true ? null : true)}
+                  />
+                </DropdownGroup>
+
+                <div className="w-full h-1 bg-white/100" />
+
+                <button
+                onClick={() => {
+                  setFilterTemp(null);
+                  setFilterFoodType(null);
+                  setFilterDebuff(null);
+                }}
+                className="bg-zinc-700 hover:bg-red-700 rounded-lg py-2 text-sm font-bold"
+                >
+                  {t("filters.clear")}
+                </button>
+              </div>
+            )}
+          </div>
+          {/* SORT */}
+          <div className="relative">
+            <button
+              onClick={() => setSortingOpen(!sortingOpen)}
+              className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-xl font-bold flex items-center gap-2"
+            >
+              <FontAwesomeIcon icon={faArrowDownAZ} />
+              {t("sorting.title")}
+            </button>
+            {sortingOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[300px] bg-zinc-900 border border-zinc-700 rounded-xl p-4 mt-2 z-50 flex flex-col gap-4 font-bold">
+                <DropdownGroup title={t("sorting.directiontype")} icon="/icons/icon_priority.png">
+                  <CheckboxFilter
+                    label={t("sorting.direction.up")}
+                    checked={sortDirection === "asc"}
+                    onChange={() => setSortDirection("asc")}
+                  />
+                  <CheckboxFilter
+                    label={t("sorting.direction.down")}
+                    checked={sortDirection === "desc"}
+                    onChange={() => setSortDirection("desc")}
+                  />
+                </DropdownGroup>
+
+                <div className="w-full h-1 bg-white/100" />
+
+                <DropdownGroup title={t("sorting.ordertype")} icon="/icons/icon_debuff.png">
+                  <CheckboxFilter label={t("sorting.type.default")} checked={sortType === "default"} onChange={() => setSortType("default")} />
+                  <CheckboxFilter label={t("sorting.type.alphabet")} checked={sortType === "alphabet"} onChange={() => setSortType("alphabet")} />
+                  <CheckboxFilter label={t("sorting.type.health")} checked={sortType === "health"} onChange={() => setSortType("health")} />
+                  <CheckboxFilter label={t("sorting.type.hunger")} checked={sortType === "hunger"} onChange={() => setSortType("hunger")} />
+                  <CheckboxFilter label={t("sorting.type.sanity")} checked={sortType === "sanity"} onChange={() => setSortType("sanity")} />
+                  <CheckboxFilter label={t("sorting.type.priority")} checked={sortType === "priority"} onChange={() => setSortType("priority")} />
+                  <CheckboxFilter label={t("sorting.type.cooktime")} checked={sortType === "cooktime"} onChange={() => setSortType("cooktime")} />
+                  <CheckboxFilter label={t("sorting.type.spoilage")} checked={sortType === "spoilage"} onChange={() => setSortType("spoilage")} />
+                </DropdownGroup>
+
+                <div className="w-full h-1 bg-white/100" />
+
+                <button
+                onClick={() => {
+                  setSortType("default");
+                  setSortDirection("asc");
+                }}
+                className="bg-zinc-700 hover:bg-red-700 rounded-lg py-2 text-sm font-bold"
+                >
+                  {t("sorting.clear")}
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+        <button
+    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-xl font-bold flex items-center gap-2"
+  >
+    <FontAwesomeIcon icon={faCircleChevronUp} />
+  </button>
+      </div>
+
+      {/* CARD GRID */}
+      <div className="grid grid-cols-4 gap-5 font-bold m-6">
+        {sortedRecipes.map((recipe, index) => (
+          <div
+            key={index}
+            id={`recipe-${recipe.name}`}
+            onClick={() => setSelected(recipe)}
+            className="bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition"
+          >
+            <img src={`/foods_cookpot/${recipe.name}.png`} className="w-24" />
+            <h2 className="text-center font-semibold text-lg">{t(`recipes.${recipe.name}`)}</h2>
+
+            <div className="flex items-center gap-2 flex-wrap justify-center">
+              {recipe.foodtype && <FoodType type={recipe.foodtype} />}
+              {recipe.temperature != null && (
+                <TopEffect
+                  icon="/icons/icon_temperature.png"
+                  value={recipe.temperature > 0 ? t("card.temperature.hot") : t("card.temperature.cold")}
+                  tooltip={t("tooltips.temperature")}
+                />
+              )}
+              {recipe.debuff && <TopEffect icon="/icons/icon_debuff.png" value={t("card.debuff.hasEffect")} tooltip={t("tooltips.debuff")} />}
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* SELECTED CARD */}
       {selected && (
         <div
           className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
@@ -570,7 +487,67 @@ export default function CookPot() {
   )
 }
 
-/* BLOCK */
+function FilterGroup({ title, children }: any) {
+  return (
+    <div className="flex flex-col gap-2">
+      <span className="text-sm font-semibold text-zinc-400 mb-1">
+        {title}
+      </span>
+      {children}
+    </div>
+  )
+}
+
+function CheckboxFilter({ label, checked, onChange }: any) {
+  return (
+    <label className="flex items-center gap-3 cursor-pointer text-sm text-zinc-300 hover:text-white transition-colors">
+      <div
+        className={`
+          w-4 h-4
+          border-2
+          rounded
+          flex items-center justify-center
+          transition-all duration-150
+          ${checked
+            ? "bg-gray-500 border-gray-500"
+            : "border-zinc-500 bg-zinc-500"
+          }
+        `}
+      >
+        {checked && (
+          <span className="text-white text-xs font-bold">
+            ✔
+          </span>
+        )}
+      </div>
+
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={onChange}
+        className="hidden"
+      />
+
+      {label}
+    </label>
+  )
+}
+
+function DropdownGroup({ title, icon, children }: any) {
+  return (
+    <div className="flex flex-col gap-1">
+      <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-400 font-bold">
+        <img src={icon} className="w-6 h-6" />
+        {title}
+      </div>
+
+      <div className="flex flex-col gap-2 pl-1">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 function Block({ children }: any) {
   return (
     <div className="bg-zinc-800 rounded-xl p-4 flex justify-evenly items-center mb-5 min-h-[70px]">
@@ -579,7 +556,6 @@ function Block({ children }: any) {
   )
 }
 
-/* STAT */
 function Stat({ icon, value, tooltip, isStatus = false }: any) {
   if (value === undefined || value === null) return null
 
@@ -625,7 +601,6 @@ function Stat({ icon, value, tooltip, isStatus = false }: any) {
   )
 }
 
-/* FOODTYPE */
 function FoodType({ type }: any) {
   return (
     <div className="relative group flex items-center gap-2 bg-zinc-800 px-3 py-1 rounded-full text-xs tracking-wide cursor-default">
@@ -634,12 +609,10 @@ function FoodType({ type }: any) {
         className="w-5 h-5 object-contain"
       />
 
-      {/* FOODTYPE TEXT */}
       <span className="text-zinc-300">
         {t(`foodtypes.${type}`)}
       </span>
 
-      {/* TOOLTIP */}
       <div
         className="
           absolute bottom-full mb-2
@@ -656,7 +629,6 @@ function FoodType({ type }: any) {
   )
 }
 
-/* EFFECT */
 function TopEffect({ icon, value, tooltip, enableTooltip = true }: any) {
   return (
     <div
@@ -743,50 +715,4 @@ function FormatCookTime(cooktime: number) {
     const label = minutes === 1 ? t("time.minute") : t("time.minutes")
     return `${minutes} ${label}`
   }
-}
-
-function FilterGroup({ title, children }: any) {
-  return (
-    <div className="flex flex-col gap-2">
-      <span className="text-sm font-semibold text-zinc-400 mb-1">
-        {title}
-      </span>
-      {children}
-    </div>
-  )
-}
-
-function CheckboxFilter({ label, checked, onChange }: any) {
-  return (
-    <label className="flex items-center gap-3 cursor-pointer text-sm text-zinc-300 hover:text-white transition-colors">
-      <div
-        className={`
-          w-4 h-4
-          border-2
-          rounded
-          flex items-center justify-center
-          transition-all duration-150
-          ${checked
-            ? "bg-gray-500 border-gray-500"
-            : "border-zinc-500 bg-zinc-500"
-          }
-        `}
-      >
-        {checked && (
-          <span className="text-white text-xs font-bold">
-            ✔
-          </span>
-        )}
-      </div>
-
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={onChange}
-        className="hidden"
-      />
-
-      {label}
-    </label>
-  )
 }

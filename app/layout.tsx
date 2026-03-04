@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { Footer } from "./components/Footer"
+import Settings from "./settings"
 import "./globals.css";
 
 config.autoAddCss = false
@@ -26,8 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${plusJakarta.className} antialiased flex flex-col min-h-screen`}>
         {children}
-        <Footer/>
+        <Settings />
+        <Footer />
       </body>
     </html>
-  );
+  )
 }

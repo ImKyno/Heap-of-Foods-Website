@@ -2,6 +2,11 @@ const en = {
   title: "Crock Pot Recipes",
   close: "Back",
 
+  search: {
+    title: "Search recipe...",
+    notfound: "No recipe found with that name.",
+  },
+
   footer: {
     backtotop: "Back to Top",
     mainpage: "Main Page",
