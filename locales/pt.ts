@@ -1,7 +1,13 @@
 const pt = {
-  title: "Receitas da Panela",
-  close: "Retornar",
-  backtotop: "Retornar ao Topo",
+  main: {
+    homepage: "Página Principal",
+    close: "Retornar",
+    backtotop: "Retornar ao Topo",
+    cookpot: "Panela",
+    cookpot_warly: "Especiais do Chef",
+    cookpot_keg: "Barril de Madeira",
+    cookpot_jar: "Jarra de Conserva",
+  },
 
   search: {
     title: "Pesquisar receita...",
@@ -10,7 +16,10 @@ const pt = {
 
   settings: {
     title: "Configurações",
-    theme: "Tema",
+    theme: {
+      dark: "Tema Escuro",
+      light: "Tema Claro",
+    },
     lang: "Idioma",
   },
 
@@ -119,7 +128,7 @@ const pt = {
   },
 
   recipes: {
-    coffee: "Cofé",
+    coffee: "Café",
     bisque: "Bisque",
     jellyopop: "Pirulit-O Jelly",
     sharkfinsoup: "Sopa de Barbatana de Tubarão",

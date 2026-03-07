@@ -1,7 +1,13 @@
 const en = {
-  title: "Crock Pot Recipes",
-  close: "Back",
-  backtotop: "Back to Top",
+  main: {
+    homepage: "Home Page",
+    close: "Back",
+    backtotop: "Back to Top",
+    cookpot: "Crock Pot",
+    cookpot_warly: "Chef's Specials",
+    cookpot_keg: "Wooden Keg",
+    cookpot_jar: "Preserves Jar",
+  },
 
   search: {
     title: "Browse recipe...",
@@ -10,7 +16,10 @@ const en = {
 
   settings: {
     title: "Settings",
-    theme: "Theme",
+    theme: {
+      dark: "Dark Theme",
+      light: "Light Theme",
+    },
     lang: "Language",
   },
 
