@@ -14,7 +14,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-z800 font-bold">
+    <footer className="bg-zinc-100 dark:bg-zinc-800 font-bold">
       <div className="max-w-8xl mx-auto px-6 py-5 text-grey">
         <div className="flex flex-col items-center gap-6">
           <div className="flex items-center gap-5">
@@ -49,7 +49,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="w-full h-[2px] bg-zinc-400" />
+          <div className="w-full h-[2px] bg-zinc-300 dark:bg-zinc-600" />
 
           <p className="text-sm text-grey text-center whitespace-pre-line max-w-2xl">
             {t("footer.description")}
