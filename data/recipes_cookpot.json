@@ -11,21 +11,97 @@
     "hunger": 9.375,
     "sanity": -10,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_coffeebeans_cooked"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "honey",
+          "tag_dairy",
+          "tag_sweetener",
+          "tag_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_coffeebeans"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_coffeebeans_cooked"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "bisque",
     "priority": 30,
     "foodtype": "MEAT",
     "spoilage": 4800,
-    "temperature": null,
-    "temperatureDuration": null,
+    "temperature": -40,
+    "temperatureDuration": 10,
     "debuff": false,
     "health": 60,
     "hunger": 18.75,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_limpet"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "tag_limpet"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jellyopop",
@@ -39,7 +115,47 @@
     "hunger": 18.75,
     "sanity": 10,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_jellyfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "jellyfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "sharkfinsoup",
@@ -53,7 +169,33 @@
     "hunger": 12.5,
     "sanity": -10,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_shark_fin"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_shark_fin"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "tropicalbouillabaisse",
@@ -67,7 +209,68 @@
     "hunger": 37.5,
     "sanity": 15,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pondeel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_wobster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "barnacle"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pondfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pondeel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "wobster_sheller_land"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "barnacle"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "feijoada",
@@ -81,7 +284,40 @@
     "hunger": 75,
     "sanity": 15,
     "cooktime": 3.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_beanbug"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "tag_beanbug"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "smallmeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gummy_cake",
@@ -95,7 +331,40 @@
     "hunger": 150,
     "sanity": -5,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_gummybug"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "tag_gummybug"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "hardshell_tacos",
@@ -109,7 +378,40 @@
     "hunger": 37.5,
     "sanity": 5,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "slurtle_shellpieces"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "slurtle_shellpieces"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "icedtea",
@@ -123,7 +425,54 @@
     "hunger": 12.5,
     "sanity": 33,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "tea",
@@ -137,7 +486,47 @@
     "hunger": 12.5,
     "sanity": 33,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "ice"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "nettlelosange",
@@ -151,7 +540,40 @@
     "hunger": 25,
     "sanity": -10,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fireweed"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "firenettles"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "nettlemeated",
@@ -165,7 +587,47 @@
     "hunger": 37.5,
     "sanity": -5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fireweed"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "twigs"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "amount": 1,
+        "comparator": "lessthan"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "firenettles"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "smallmeat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "snakebonesoup",
@@ -179,7 +641,49 @@
     "hunger": 80,
     "sanity": 20,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_worm_bone"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_humanmeat",
+          "kyno_humanmeat_cooked",
+          "kyno_humanmeat_dried"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_worm_bone"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "steamedhamsandwich",
@@ -193,7 +697,54 @@
     "hunger": 62.5,
     "sanity": 15,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_bread",
@@ -207,7 +758,33 @@
     "hunger": 6.375,
     "sanity": 0,
     "cooktime": 1,
-    "stacksize": 3
+    "stacksize": 3,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 4,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_sweet_chips",
@@ -221,7 +798,54 @@
     "hunger": 75,
     "sanity": 15,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_sweetpotato"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sweetpotato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_vegetable_soup",
@@ -235,7 +859,76 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "potato",
+          "potato_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_jelly_sandwich",
@@ -249,7 +942,66 @@
     "hunger": 37.5,
     "sanity": 15,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_inedible"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "berries",
+          "berries_juicy"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_fish_stew",
@@ -263,7 +1015,67 @@
     "hunger": 100,
     "sanity": 5,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_salmon"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "asparagus"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "twigs"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_salmonfish"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "asparagus"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_onion_cake",
@@ -277,7 +1089,61 @@
     "hunger": 37.5,
     "sanity": 10,
     "cooktime": 0.75,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_turnip"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_turnip"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_potato_pancakes",
@@ -291,7 +1157,53 @@
     "hunger": 40,
     "sanity": 40,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_potato_soup",
@@ -305,7 +1217,40 @@
     "hunger": 75,
     "sanity": 15,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_fishball_skewers",
@@ -319,7 +1264,54 @@
     "hunger": 37.5,
     "sanity": 20,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pondfish"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_meat_skewers",
@@ -333,7 +1325,54 @@
     "hunger": 37.5,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bacon"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_bacon"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_stone_soup",
@@ -347,7 +1386,40 @@
     "hunger": 25,
     "sanity": 5,
     "cooktime": 0.6,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "rocks"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "rocks"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_croquette",
@@ -361,7 +1433,61 @@
     "hunger": 50,
     "sanity": 10,
     "cooktime": 0.75,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "potato_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_roast_vegetables",
@@ -375,7 +1501,68 @@
     "hunger": 40,
     "sanity": 20,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "onion_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "asparagus_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "onion_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "asparagus_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_meatloaf",
@@ -389,7 +1576,61 @@
     "hunger": 25,
     "sanity": 5,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bacon"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_bacon"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_carrot_soup",
@@ -403,7 +1644,40 @@
     "hunger": 37.5,
     "sanity": 10,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_fishpie",
@@ -417,7 +1691,54 @@
     "hunger": 62.5,
     "sanity": 5,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_salmon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_salmonfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_fishchips",
@@ -431,7 +1752,54 @@
     "hunger": 85,
     "sanity": 15,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pondfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_meatpie",
@@ -445,7 +1813,75 @@
     "hunger": 50,
     "sanity": 25,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "potato",
+          "potato_cooked"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion",
+          "onion"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_bacon"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_sliders",
@@ -459,7 +1895,54 @@
     "hunger": 12.5,
     "sanity": 25,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bacon"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "littlebread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "tag_bacon"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "littlebread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_jelly_roll",
@@ -473,7 +1956,40 @@
     "hunger": 25,
     "sanity": 15,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_carrot_cake",
@@ -487,7 +2003,61 @@
     "hunger": 37.5,
     "sanity": 5,
     "cooktime": 0.75,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "carrot_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_garlicmashed",
@@ -501,7 +2071,54 @@
     "hunger": 37.5,
     "sanity": 15,
     "cooktime": 0.6,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_garlicbread",
@@ -515,7 +2132,53 @@
     "hunger": 37.5,
     "sanity": 5,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_tomato_soup",
@@ -529,7 +2192,40 @@
     "hunger": 50,
     "sanity": 15,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_sausage",
@@ -543,7 +2239,40 @@
     "hunger": 37.5,
     "sanity": 10,
     "cooktime": 0.8,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bacon"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_bacon"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_candiedfish",
@@ -557,7 +2286,40 @@
     "hunger": 25,
     "sanity": 60,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_salmon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_salmonfish"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_stuffedmushroom",
@@ -571,7 +2333,58 @@
     "hunger": 20,
     "sanity": 10,
     "cooktime": 0.8,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "royal_jelly"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_bruschetta",
@@ -585,7 +2398,54 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 1.7,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_hamburger",
@@ -599,7 +2459,88 @@
     "hunger": 80,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_bacon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_bacon"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_bacon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_fishburger",
@@ -613,7 +2554,54 @@
     "hunger": 80,
     "sanity": 5,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_salmon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salmonfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_mushroomburger",
@@ -627,7 +2615,54 @@
     "hunger": 80,
     "sanity": 30,
     "cooktime": 0.7,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_fish_steak",
@@ -641,7 +2676,61 @@
     "hunger": 150,
     "sanity": 15,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_salmonfish_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_salmonfish"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_salmonfish_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_curry",
@@ -655,7 +2744,54 @@
     "hunger": 75,
     "sanity": 15,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_spaghetti",
@@ -669,7 +2805,68 @@
     "hunger": 80,
     "sanity": 25,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_poachedfish",
@@ -683,7 +2880,54 @@
     "hunger": 25,
     "sanity": 25,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_salmon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_salmonfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_shepherd_pie",
@@ -697,7 +2941,68 @@
     "hunger": 150,
     "sanity": 10,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_candy",
@@ -711,7 +3016,40 @@
     "hunger": 20,
     "sanity": 33,
     "cooktime": 0.75,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_bread_pudding",
@@ -725,7 +3063,54 @@
     "hunger": 40,
     "sanity": 40,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_berry_tart",
@@ -739,7 +3124,61 @@
     "hunger": 20,
     "sanity": 15,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_macaroni",
@@ -753,7 +3192,71 @@
     "hunger": 37.5,
     "sanity": 50,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_bagel_and_fish",
@@ -767,7 +3270,68 @@
     "hunger": 75,
     "sanity": 50,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_salmon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salmonfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_grilled_cheese",
@@ -781,7 +3345,74 @@
     "hunger": 50,
     "sanity": 40,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy",
+          "tag_cheese"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_inedible"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cheese_yellow"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_creammushroom",
@@ -795,7 +3426,54 @@
     "hunger": 50,
     "sanity": 25,
     "cooktime": 0.75,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_manicotti",
@@ -809,7 +3487,68 @@
     "hunger": 50,
     "sanity": 50,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_fettuccine",
@@ -823,7 +3562,68 @@
     "hunger": 50,
     "sanity": 40,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_onion_soup",
@@ -837,7 +3637,54 @@
     "hunger": 75,
     "sanity": -5,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_breaded_cutlet",
@@ -851,7 +3698,48 @@
     "hunger": 75,
     "sanity": 15,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_creamy_fish",
@@ -865,7 +3753,68 @@
     "hunger": 75,
     "sanity": 30,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_salmon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salmonfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_pot_roast",
@@ -879,7 +3828,73 @@
     "hunger": 150,
     "sanity": 5,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_chicken"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_steak_frites",
@@ -893,7 +3908,40 @@
     "hunger": 100,
     "sanity": 5,
     "cooktime": 2.25,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_shooter_sandwich",
@@ -907,7 +3955,67 @@
     "hunger": 100,
     "sanity": 15,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_bacon_wrapped",
@@ -921,7 +4029,59 @@
     "hunger": 50,
     "sanity": 0,
     "cooktime": 0.75,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_bacon"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_inedible"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_bacon"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_crab_cake",
@@ -935,7 +4095,68 @@
     "hunger": 62.5,
     "sanity": 20,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_crab"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_crabmeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_crab_roll",
@@ -949,7 +4170,68 @@
     "hunger": 75,
     "sanity": 25,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_crab"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_crabmeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_crab_ravioli",
@@ -963,7 +4245,68 @@
     "hunger": 40,
     "sanity": 50,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_crab"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_crabmeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_caramel_cube",
@@ -977,7 +4320,40 @@
     "hunger": 20,
     "sanity": 100,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_scone",
@@ -991,7 +4367,54 @@
     "hunger": 37.5,
     "sanity": 40,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_cheesecake",
@@ -1005,7 +4428,54 @@
     "hunger": 75,
     "sanity": 60,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gorge_waffles",
@@ -1019,7 +4489,54 @@
     "hunger": 37.5,
     "sanity": 60,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "kyno_syrup",
@@ -1033,7 +4550,41 @@
     "hunger": 6.375,
     "sanity": 3,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_sap"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_dairy",
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sap"
+        ],
+        "amount": 4,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "slaw",
@@ -1047,7 +4598,40 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_fennel"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "kyno_radish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_fennel"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_radish"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "lotusbowl",
@@ -1061,7 +4645,26 @@
     "hunger": 12.5,
     "sanity": 50,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_lotus_flower"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_lotus_flower"
+        ],
+        "amount": 4,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "poi",
@@ -1075,7 +4678,33 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_taroroot"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_inedible"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_taroroot"
+        ],
+        "amount": 4,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "cucumbersalad",
@@ -1089,7 +4718,34 @@
     "hunger": 25,
     "sanity": 15,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_cucumber"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_taroroot",
+          "kyno_taroroot_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_cucumber"
+        ],
+        "amount": 4,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "waterycressbowl",
@@ -1103,7 +4759,47 @@
     "hunger": 37.5,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_waterycress"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_waterycress"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "bowlofgears",
@@ -1117,7 +4813,40 @@
     "hunger": 200,
     "sanity": 150,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "gears"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "wagpunk_bits"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "gears"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "wagpunk_bits"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "longpigmeal",
@@ -1131,7 +4860,42 @@
     "hunger": 150,
     "sanity": -300,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_humanmeat",
+          "kyno_humanmeat_cooked",
+          "kyno_humanmeat_dried"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "boneshard"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_humanmeat"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "boneshard"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "duckyouglermz",
@@ -1145,7 +4909,68 @@
     "hunger": 12.5,
     "sanity": 33,
     "cooktime": 5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "poop"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "guano"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "glommerfuel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "poop"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "guano"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "glommerfuel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "catfood",
@@ -1159,7 +4984,54 @@
     "hunger": 25,
     "sanity": 15,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pondfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "katfood",
@@ -1173,7 +5045,61 @@
     "hunger": 15,
     "sanity": 30,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "bowlofpopcorn",
@@ -1187,7 +5113,47 @@
     "hunger": 75,
     "sanity": 33,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "corn_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "figjuice",
@@ -1201,7 +5167,59 @@
     "hunger": 15,
     "sanity": 50,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "fig"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_inedible"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "fig"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "coconutwater",
@@ -1215,7 +5233,73 @@
     "hunger": 0,
     "sanity": 0,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_kokonut_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_kokonut_halved_cooked"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_kokonut_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "eyeballspaghetti",
@@ -1229,11 +5313,58 @@
     "hunger": 150,
     "sanity": -150,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "deerclops_eyeball"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "deerclops_eyeball"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "soulstew",
-    "priority": 1,
+    "priority": 10,
     "foodtype": "PREPAREDSOUL",
     "spoilage": null,
     "temperature": null,
@@ -1243,7 +5374,47 @@
     "hunger": 75,
     "sanity": 15,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_bottle_soul"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "boneshard"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_bottle_soul"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "boneshard"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "fortunecookie",
@@ -1257,7 +5428,54 @@
     "hunger": 20,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "papyrus"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "papyrus"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "hornocupia",
@@ -1271,7 +5489,68 @@
     "hunger": 75,
     "sanity": 25,
     "cooktime": 1.6,
-    "stacksize": 2
+    "stacksize": 2,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "horn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "horn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "cheese_yellow",
@@ -1285,7 +5564,66 @@
     "hunger": 25,
     "sanity": 5,
     "cooktime": 2.3,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic",
+          "garlic_cooked"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_milk_koalefant"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_cheese"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "cheese_white",
@@ -1299,7 +5637,67 @@
     "hunger": 25,
     "sanity": 20,
     "cooktime": 2.3,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_cheese"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "cheese_koalefant",
@@ -1313,7 +5711,72 @@
     "hunger": 25,
     "sanity": 5,
     "cooktime": 2.3,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_milk_koalefant"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "garlic",
+          "garlic_cooked"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_milk_beefalo"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_cheese"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_milk_koalefant"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "milk_box",
@@ -1327,7 +5790,47 @@
     "hunger": 0,
     "sanity": 20,
     "cooktime": 1.1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "milk_box"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "honeyjar",
@@ -1341,7 +5844,40 @@
     "hunger": 45,
     "sanity": 10,
     "cooktime": 1.6,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "watercup",
@@ -1355,7 +5891,63 @@
     "hunger": 1,
     "sanity": 1,
     "cooktime": 0.1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 4,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "crab_artichoke",
@@ -1369,7 +5961,54 @@
     "hunger": 12.5,
     "sanity": 60,
     "cooktime": 2.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_crab"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_algae"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_crabmeat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_seaweeds"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "poisonfrogglebunwich",
@@ -1383,7 +6022,55 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_poison_froglegs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "froglegs",
+          "froglegs_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_poison_froglegs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kelp"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pepperrolls",
@@ -1397,7 +6084,54 @@
     "hunger": 32.5,
     "sanity": -15,
     "cooktime": 1.6,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chocolate_black",
@@ -1411,7 +6145,61 @@
     "hunger": 12.5,
     "sanity": 33,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_milk_beefalo"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chocolate_white",
@@ -1425,7 +6213,54 @@
     "hunger": 33,
     "sanity": 12.5,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_milk_beefalo"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_milk_beefalo"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "tricolordango",
@@ -1439,7 +6274,68 @@
     "hunger": 12.5,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "friesfrench",
@@ -1453,7 +6349,54 @@
     "hunger": 32.5,
     "sanity": 10,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "onionrings",
@@ -1467,7 +6410,54 @@
     "hunger": 25,
     "sanity": 20,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "donuts",
@@ -1481,7 +6471,54 @@
     "hunger": 50,
     "sanity": 10,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "donuts_chocolate_black",
@@ -1495,7 +6532,68 @@
     "hunger": 55,
     "sanity": 40,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "chocolate_black"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "chocolate_black"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "donuts_chocolate_white",
@@ -1509,7 +6607,68 @@
     "hunger": 75,
     "sanity": 15,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "chocolate_white"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "chocolate_white"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gummybeargers",
@@ -1523,7 +6682,54 @@
     "hunger": 30,
     "sanity": -5,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "bearger_fur"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_gummybug"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "bearger_fur"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_gummybug"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "gummyworms",
@@ -1537,7 +6743,54 @@
     "hunger": 25,
     "sanity": -5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_gummybug"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ancientfruit_nightvision"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_gummybug"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ancientfruit_nightvision"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pretzel",
@@ -1551,7 +6804,54 @@
     "hunger": 60,
     "sanity": 15,
     "cooktime": 2.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "cornincup",
@@ -1565,7 +6865,69 @@
     "hunger": 50,
     "sanity": 50,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_butter",
+          "tag_cheese"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "cottoncandy",
@@ -1579,7 +6941,40 @@
     "hunger": 12.5,
     "sanity": 33,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "roastedhazelnuts",
@@ -1593,7 +6988,40 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "acorn_cooked"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "acorn_cooked"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "monstermuffin",
@@ -1607,7 +7035,54 @@
     "hunger": 50,
     "sanity": -15,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "nightmarefuel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "nightmarefuel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pinkcake",
@@ -1621,7 +7096,54 @@
     "hunger": 62.5,
     "sanity": 20,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chipsbag",
@@ -1635,7 +7157,54 @@
     "hunger": 62.5,
     "sanity": 5,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "littlebread",
@@ -1649,7 +7218,40 @@
     "hunger": 6.375,
     "sanity": 1,
     "cooktime": 1,
-    "stacksize": 3
+    "stacksize": 3,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "hothound",
@@ -1663,7 +7265,76 @@
     "hunger": 32.5,
     "sanity": 10,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "littlebread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "littlebread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "milkshake",
@@ -1677,7 +7348,75 @@
     "hunger": 12.5,
     "sanity": 30,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "banana_pudding",
@@ -1691,7 +7430,54 @@
     "hunger": 12.5,
     "sanity": 50,
     "cooktime": 0.8,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_banana"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_banana"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "sea_pudding",
@@ -1705,7 +7491,68 @@
     "hunger": 150,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "pondeel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_mussel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_grouper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_algae"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pondeel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_mussel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_grouper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kelp"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "minertreat",
@@ -1719,7 +7566,54 @@
     "hunger": 12.5,
     "sanity": 15,
     "cooktime": 0.8,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "radishsalad",
@@ -1733,7 +7627,40 @@
     "hunger": 62.5,
     "sanity": 5,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_radish"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_radish"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pumpkin_soup",
@@ -1747,7 +7674,54 @@
     "hunger": 100,
     "sanity": 33,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "pumpkin"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pumpkin"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "parznip_soup",
@@ -1761,7 +7735,42 @@
     "hunger": 32.5,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_parznip",
+          "kyno_parznip_eaten",
+          "kyno_parznip_cooked"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_parznip"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "algae_soup",
@@ -1775,7 +7784,53 @@
     "hunger": 75,
     "sanity": 25,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_algae"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kelp"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_waterycress"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_seaweeds"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "duriansplit",
@@ -1789,7 +7844,54 @@
     "hunger": 32.5,
     "sanity": -15,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_banana"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_banana"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "duriansoup",
@@ -1803,7 +7905,40 @@
     "hunger": 37.5,
     "sanity": 0,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "durianmeated",
@@ -1817,7 +7952,47 @@
     "hunger": 37.5,
     "sanity": -5,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "monstermeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "durianchicken",
@@ -1831,7 +8006,67 @@
     "hunger": 45,
     "sanity": -30,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cactus_meat"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "cactus_flower"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "durian_cooked"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cactus_meat_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cactus_meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cactus_flower"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "berrybombs",
@@ -1845,7 +8080,40 @@
     "hunger": 18.25,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chimas",
@@ -1859,7 +8127,40 @@
     "hunger": 12.5,
     "sanity": 33,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_tillweed"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "tillweed"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "antslog",
@@ -1873,7 +8174,54 @@
     "hunger": 25,
     "sanity": 15,
     "cooktime": 1.1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "livinglog"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "fig"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "livinglog"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "fig"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "eeltacos",
@@ -1887,7 +8235,54 @@
     "hunger": 37.5,
     "sanity": 20,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "pondeel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cutlichen"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pondeel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cutlichen"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "livingsandwich",
@@ -1901,7 +8296,40 @@
     "hunger": 40,
     "sanity": -5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "livinglog"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "livinglog"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "monstermeat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "lunarsoup",
@@ -1915,7 +8343,54 @@
     "hunger": 18.75,
     "sanity": 0,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "moon_cap"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "rock_avocado_fruit_ripe"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "moon_cap"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "rock_avocado_fruit_ripe"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "purplewobstersoup",
@@ -1929,7 +8404,54 @@
     "hunger": 62.5,
     "sanity": -5,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_wobster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_grouper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_turnip"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "wobster_sheller_land"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_grouper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_turnip"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "wobstermonster",
@@ -1943,7 +8465,54 @@
     "hunger": 37.5,
     "sanity": -20,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_wobster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "wobster_sheller_land"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "monstermeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "spidercake",
@@ -1957,7 +8526,68 @@
     "hunger": 37.5,
     "sanity": -20,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "spider"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "spider"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "monstermeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "sugarbombs",
@@ -1971,7 +8601,40 @@
     "hunger": 20,
     "sanity": 15,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "kyno_wheat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_wheat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "onigiris",
@@ -1985,7 +8648,54 @@
     "hunger": 20,
     "sanity": 8,
     "cooktime": 1.1,
-    "stacksize": 2
+    "stacksize": 2,
+    "requires": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_algae"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_seaweeds"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "omurice",
@@ -1999,7 +8709,54 @@
     "hunger": 32.5,
     "sanity": 10,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "paella",
@@ -2013,7 +8770,68 @@
     "hunger": 50,
     "sanity": 10,
     "cooktime": 2,
-    "stacksize": 2
+    "stacksize": 2,
+    "requires": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_mussel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_mussel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pondfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pizza_tropical",
@@ -2027,7 +8845,69 @@
     "hunger": 75,
     "sanity": 15,
     "cooktime": 2.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_pineapple_halved",
+          "kyno_pineapple_halved_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pondfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_pineapple_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pinacolada",
@@ -2041,7 +8921,81 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_pineapple_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_kokonut_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_pineapple_halved_cooked"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_kokonut_halved_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_pineapple_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_kokonut_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "smores",
@@ -2055,7 +9009,54 @@
     "hunger": 65,
     "sanity": 65,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_chocolate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "chocolate_black"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "moonbutterflymuffin",
@@ -2069,7 +9070,54 @@
     "hunger": 37.5,
     "sanity": 20,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "moonbutterflywings"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "moonbutterflywings"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "sugarflymuffin",
@@ -2083,7 +9131,54 @@
     "hunger": 18.75,
     "sanity": 20,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_sugarflywings"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sugarflywings"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "meatwaltz",
@@ -2097,7 +9192,68 @@
     "hunger": 37.5,
     "sanity": 5,
     "cooktime": 0.7,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "completebreakfast",
@@ -2111,7 +9267,68 @@
     "hunger": 150,
     "sanity": 5,
     "cooktime": 3,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "baconeggs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "baconeggs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "dumplings",
@@ -2125,7 +9342,68 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 1.3,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "lessthan"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "smallmeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "coxinha",
@@ -2139,7 +9417,68 @@
     "hunger": 32.5,
     "sanity": 0,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "crabkingfeast",
@@ -2153,7 +9492,75 @@
     "hunger": 62.5,
     "sanity": 33,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_crabkingmeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "corn_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_crabkingmeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pienapple",
@@ -2167,7 +9574,41 @@
     "hunger": 25,
     "sanity": 5,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_pineapple_halved",
+          "kyno_pineapple_halved_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_pineapple_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "avocadotoast",
@@ -2181,7 +9622,47 @@
     "hunger": 37.5,
     "sanity": 5,
     "cooktime": 1.3,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "rock_avocado_fruit_ripe"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "rock_avocado_fruit_ripe"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "ricepudding",
@@ -2195,7 +9676,54 @@
     "hunger": 15,
     "sanity": 33,
     "cooktime": 0.8,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "sharksushi",
@@ -2209,7 +9737,40 @@
     "hunger": 40,
     "sanity": -10,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_shark_fin"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_shark_fin"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "wobsterbreaded",
@@ -2223,7 +9784,68 @@
     "hunger": 50,
     "sanity": 10,
     "cooktime": 0.7,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_wobster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "wobster_sheller_land"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "lazypurrito",
@@ -2237,7 +9859,54 @@
     "hunger": 62.5,
     "sanity": -15,
     "cooktime": 1.3,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_beanbug"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_beanbugs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "horchata",
@@ -2251,7 +9920,68 @@
     "hunger": 20,
     "sanity": 5,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "wobstercocktail",
@@ -2265,7 +9995,61 @@
     "hunger": 32.5,
     "sanity": 60,
     "cooktime": 1.1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_wobster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_inedible"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "wobster_sheller_land"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pomegranatetea",
@@ -2279,7 +10063,54 @@
     "hunger": 12.5,
     "sanity": 10,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pomegranatepie",
@@ -2293,7 +10124,61 @@
     "hunger": 32.5,
     "sanity": 20,
     "cooktime": 1.6,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pineapplecake",
@@ -2307,7 +10192,69 @@
     "hunger": 25,
     "sanity": 40,
     "cooktime": 1.8,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_pineapple_halved",
+          "kyno_pineapple_halved_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_pineapple_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pasty_meat",
@@ -2321,7 +10268,75 @@
     "hunger": 62.5,
     "sanity": 5,
     "cooktime": 0.7,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_wobster"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pasty_cheese",
@@ -2335,7 +10350,68 @@
     "hunger": 37.5,
     "sanity": 33,
     "cooktime": 0.7,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_cheese"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "cheese_yellow"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "brigadeiro",
@@ -2349,7 +10425,54 @@
     "hunger": 32.5,
     "sanity": 50,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "chocolate_black"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "chocolate_black"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_twiggynuts"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "regularlasagna",
@@ -2363,7 +10486,79 @@
     "hunger": 37.5,
     "sanity": 30,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_wobster"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "fltsandwich",
@@ -2377,7 +10572,68 @@
     "hunger": 32.5,
     "sanity": 33,
     "cooktime": 1.3,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_moon_froglegs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_algae"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_moon_froglegs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kelp"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "riceandbeans",
@@ -2391,7 +10647,40 @@
     "hunger": 62.5,
     "sanity": 20,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_beanbug"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_beanbugs"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "trufflesgrinder",
@@ -2405,7 +10694,54 @@
     "hunger": 62.5,
     "sanity": 0,
     "cooktime": 1.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_truffles"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_truffles"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "sporecappie",
@@ -2419,7 +10755,54 @@
     "hunger": 37.5,
     "sanity": -10,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_sporecap"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sporecap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "sporecap_skewers",
@@ -2433,7 +10816,54 @@
     "hunger": 45,
     "sanity": -20,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_sporecap_dark"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sporecap_dark"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "swordfishfeast",
@@ -2447,7 +10877,68 @@
     "hunger": 150,
     "sanity": 25,
     "cooktime": 2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_swordfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_cheese"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "fig"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_swordfish_dead"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cheese_yellow"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "fig"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "monkeyislandmeal",
@@ -2461,7 +10952,47 @@
     "hunger": 25,
     "sanity": 20,
     "cooktime": 0.15,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "wobster_monkeyisland_land"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_banana"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "wobster_monkeyisland_land"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_banana"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "twigs"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "brainmettersoup",
@@ -2475,7 +11006,61 @@
     "hunger": 18.75,
     "sanity": 50,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_brainrock_coral"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_jellyfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_algae"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_inedible"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_brainrock_coral"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_jellyfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_seaweeds"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chickennuggets",
@@ -2489,7 +11074,68 @@
     "hunger": 32.5,
     "sanity": 5,
     "cooktime": 0.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chickenwings",
@@ -2503,7 +11149,68 @@
     "hunger": 42.5,
     "sanity": 10,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fireweed"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "firenettles"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chickenburger",
@@ -2517,7 +11224,68 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 1,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_chickenegg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_chicken_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chickeneggsoup",
@@ -2531,7 +11299,68 @@
     "hunger": 25,
     "sanity": 25,
     "cooktime": 1.2,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_chickenegg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_chicken_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chickeneggstew",
@@ -2545,7 +11374,68 @@
     "hunger": 62.5,
     "sanity": 5,
     "cooktime": 1.3,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_chickenegg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_aloe"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_chicken_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_aloe"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "chickenrotisserie",
@@ -2559,7 +11449,61 @@
     "hunger": 150,
     "sanity": 10,
     "cooktime": 2.5,
-    "stacksize": null
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_chicken"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_inedible"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_chicken2"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jawsbreaker",
@@ -2573,6 +11517,53 @@
     "hunger": 12.5,
     "sanity": 33,
     "cooktime": 1,
-    "stacksize": 2
+    "stacksize": 2,
+    "requires": [
+      {
+        "items": [
+          "kyno_shark_fin"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_shark_fin"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
   }
 ]

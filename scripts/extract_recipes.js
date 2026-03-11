@@ -45,6 +45,10 @@ const IGNORE_DEBUFF_RECIPES = new Set([
   "lazypurrito",
 ])
 
+function cleanIngredientName(name) {
+  return name.replace(/^kyno_/, "")
+}
+
 function extractNumber(block, key) {
   const match = block.match(new RegExp(`${key}\\s*=\\s*([\\d\\.\\-]+)`))
   return match ? Number(match[1]) : null
@@ -80,6 +84,39 @@ function extractRecipesFromLua(luaText) {
   return results
 }
 
+function extractItemBlocks(block, key) {
+  const start = block.indexOf(key + " =")
+  if (start === -1) return []
+
+  let index = block.indexOf("{", start)
+  if (index === -1) return []
+
+  let braceCount = 1
+  index++
+  const startIndex = index - 1
+  while (braceCount > 0 && index < block.length) {
+    if (block[index] === "{") braceCount++
+    if (block[index] === "}") braceCount--
+    index++
+  }
+  
+  const raw = block.slice(startIndex, index).trim()
+  const itemBlocks = []
+  const regex = /\{\s*items\s*=\s*\{([^\}]+)\}\s*(?:,\s*amount\s*=\s*(\d+))?\s*(?:,\s*comparator\s*=\s*"(\w+)")?\s*\}/g
+  let m
+  while ((m = regex.exec(raw)) !== null) {
+    const items = m[1].split(",").map(s => s.replace(/["\s]/g,"").trim())
+    const amount = m[2] ? Number(m[2]) : undefined
+    const comparator = m[3] ? m[3] : "equal"
+  
+    const obj = { items }
+    if (amount !== undefined) obj.amount = amount
+    if (comparator) obj.comparator = comparator
+    itemBlocks.push(obj)
+  }
+  return itemBlocks
+}
+
 const rawRecipes = extractRecipesFromLua(lua)
 
 for (const recipe of rawRecipes) {
@@ -98,6 +135,10 @@ for (const recipe of rawRecipes) {
   ) {
     continue
   }
+
+  const requires = extractItemBlocks(block, "required")
+  const excluded = extractItemBlocks(block, "excluded")
+  const card_def = extractItemBlocks(block, "card_def")
 
   const temperatureRaw = extractString(block, "temperature")
   const tempKey = temperatureRaw?.replace("TUNING.", "")
@@ -145,6 +186,9 @@ for (const recipe of rawRecipes) {
     sanity: extractNumber(block, "sanity"),
     cooktime: extractNumber(block, "cooktime"),
     stacksize: extractNumber(block, "stacksize"),
+    requires,
+    excluded,
+    card_def
   })
 }
 

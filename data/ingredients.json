@@ -732,6 +732,18 @@
         "sanity": [-20, -10]
     },
     {
+        "name": "twigs",
+        "cooked": false,
+        "dried": false,
+        "foodtype": "ROUGHAGE",
+        "cooktype": ["INEDIBLE"],
+        "cookvalue": [1.0],
+        "spoilage": [null],
+        "health": [0.5],
+        "hunger": [9.4],
+        "sanity": [0]
+    },
+    {
         "name": "foliage",
         "cooked": true,
         "dried": true,
@@ -1453,18 +1465,6 @@
     },
     {
         "name": "batwing",
-        "cooked": true,
-        "dried": false,
-        "foodtype": "MEAT",
-        "cooktype": ["MEAT"],
-        "cookvalue": [0.5],
-        "spoilage": [2880, 4800],
-        "health": [3, 8],
-        "hunger": [12.5, 18.5],
-        "sanity": [-10, 0]
-    },
-    {
-        "name": "batnose",
         "cooked": true,
         "dried": false,
         "foodtype": "MEAT",

@@ -1,6 +1,5 @@
 local kyno_foods =
 {
-	-- Shipwrecked Foods.
 	coffee =
 	{
 		test = function(cooker, names, tags) return names.kyno_coffeebeans_cooked and (names.kyno_coffeebeans_cooked == 4 or 
@@ -19,7 +18,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_sw",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "fooddrink", "nospice"},
-		card_def = {ingredients = {{"kyno_coffeebeans_cooked", 3}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "kyno_coffeebeans_cooked" }, amount = 3, comparator = "morethan" },
+			{ items = { "honey", "tag_dairy", "tag_sweetener", "tag_sugar" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "kyno_coffeebeans" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_coffeebeans_cooked" }, amount = 3 },
+			{ items = { "honey" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 
 		end,
@@ -31,6 +43,8 @@ local kyno_foods =
 		priority = 30,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 60,
 		hunger = 18.75,
 		sanity = 5,
@@ -38,7 +52,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_sw",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_limpets", 3}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "tag_limpet" }, amount = 3, comparator = "morethan" },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tag_limpet" }, amount = 3 },
+			{ items = { "ice" }, amount = 1},
+		},
 	},
 	
 	jellyopop = 
@@ -56,7 +83,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_sw",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_jellyfish", 1}, {"ice", 1}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "tag_jellyfish" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+			{ items = { "twigs" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "jellyfish" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+			{ items = { "twigs" }, amount 1 },
+		},
 	},
 	
 	sharkfinsoup = 
@@ -74,7 +116,19 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_sw",
 		floater = TUNING.HOF_FLOATER,
 		luckitem = { luck = -TUNING.KYNO_LUCK_MEDLARGE },
-		card_def = {ingredients = {{"kyno_shark_fin", 1}, {"twigs", 3}}},
+		required = 
+		{
+			{ items = { "kyno_shark_fin" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_shark_fin" }, amount = 1},
+			{ items = { "twigs" }, amount = 3 },
+		},
 		oneatenfn = function(inst, eater)
 			OnFoodNaughtiness(inst, eater)
 		end,
@@ -97,7 +151,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_sw",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pondfish", 1}, {"pondeel", 1}, {"wobster_sheller_land", 1}, {"barnacle", 1}}},
+		required = 
+		{
+			{ items = { "tag_fish" }, amount = 1 },
+			{ items = { "pondeel" }, amount = 1 },
+			{ items = { "tag_wobster" }, amount = 1 },
+			{ items = { "barnacle" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pondfish" }, amount = 1 },
+			{ items = { "pondeel" }, amount = 1 },
+			{ items = { "wobster_sheller_land" }, amount = 1 },
+			{ items = { "barnacle" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 
 		end,
@@ -117,7 +188,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_ham",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_beanbugs", 3}, {"monstermeat", 1}}},
+		required = 
+		{
+			{ items = { "tag_beanbug" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_meat" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tag_beanbug" }, amount = 3 },
+			{ items = { "smallmeat" }, amount = 1 },
+		},
 	},
 	
 	gummy_cake =
@@ -134,7 +218,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_ham",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"kyno_gummybug", 1}, {"honey", 3}}},
+		required = 
+		{
+			{ items = { "tag_gummybug" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tag_gummybug" }, amount = 1 },
+			{ items = { "honey" }, amount = 3 },
+		},
 	},
 	
 	hardshell_tacos =
@@ -150,7 +247,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_ham",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"slurtle_shellpieces", 2}, {"tomato", 2}}},
+		required = 
+		{
+			{ items = { "slurtle_shellpieces" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_veggie" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "slurtle_shellpieces" }, amount = 2 },
+			{ items = { "carrot" }, amount = 2 },
+		},
 	},
 	
 	icedtea = 
@@ -165,11 +275,25 @@ local kyno_foods =
 		hunger = 12.5,
 		sanity = 33,
 		cooktime = 0.5,
-		-- oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_SPEED,
 		overridebuild = "kyno_foodrecipes_ham",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "fooddrink"},
-		card_def = {ingredients = {{"kyno_tealeaf", 2}, {"honey", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_tealeaf" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_sweetener" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_tealeaf" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 	
 	tea = 
@@ -186,11 +310,23 @@ local kyno_foods =
 		sanity = 33,
 		cooktime = 1,
 		potlevel = "low",
-		-- oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_SPEED,
 		overridebuild = "kyno_foodrecipes_ham",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "fooddrink"},
-		card_def = {ingredients = {{"kyno_tealeaf", 2}, {"honey", 2}}},
+		required = 
+		{
+			{ items = { "kyno_tealeaf" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "ice" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_tealeaf" }, amount = 2 },
+			{ items = { "honey" }, amount = 2 },
+		},
 	},
 	
 	nettlelosange = 
@@ -209,7 +345,19 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_ham",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"firenettles", 1}, {"twigs", 3}}},
+		required = 
+		{
+			{ items = { "tag_fireweed" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_meat" } },
+		},
+		card_def = 
+		{
+			{ items = { "firenettles" }, amount = 1 },
+			{ items = { "twigs" }, amount = 3 },
+		},
 	},
 	
 	nettlemeated =
@@ -229,7 +377,21 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_ham",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"firenettles", 2}, {"smallmeat", 2}}},
+		required = 
+		{
+			{ items = { "tag_fireweed" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_meat" } amount = 1, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "twigs" } },
+			{ items = { "tag_monster" }, amount = 1, comparator = "lessthan" },
+		},
+		card_def = 
+		{
+			{ items = { "firenettles" }, amount = 2 },
+			{ items = { "smallmeat" }, amount = 2 },
+		},
 	},
 	
 	snakebonesoup = 
@@ -247,7 +409,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_ham",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_worm_bone", 2}, {"meat", 2}}},
+		required = 
+		{
+			{ items = { "kyno_worm_bone" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_meat" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "kyno_humanmeat", "kyno_humanmeat_cooked", "kyno_humanmeat_dried" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_worm_bone" }, amount = 2 },
+			{ items = { "meat" }, amount = 2 },
+		},
 		prefabs = { "kyno_wormbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_wormbuff", "kyno_wormbuff")
@@ -267,10 +442,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_ham",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 2}, {"foliage", 1}, {"garlic", 1}}},
+		required = 
+		{
+			{ items = { "meat" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_foliage" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 2 },
+			{ items = { "foliage" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+		},
 	},
 	
-	-- The Gorge Foods.
 	gorge_bread = 
 	{
 		test = function(cooker, names, tags) return (tags.flour and tags.flour >= 3) and not tags.spotspice end,
@@ -285,7 +474,18 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_flour", 4}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 3, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_spotspice" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 4 },
+		},
 	},
 	
 	gorge_sweet_chips = 
@@ -302,7 +502,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_sweetpotato", 2}, {"kyno_oil", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sweetpotato" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sweetpotato" }, amount = 2 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_vegetable_soup =
@@ -319,7 +534,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"carrot", 1}, {"onion", 1}, {"corn", 1}, {"foliage", 1}}},
+		required = 
+		{
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+			{ items = { "corn" }, amount = 1 },
+			{ items = { "foliage" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "potato", "potato_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+			{ items = { "corn" }, amount = 1 },
+			{ items = { "foliage" }, amount = 1 },
+		},
 	},
 	
 	gorge_jelly_sandwich = 
@@ -336,7 +568,23 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"gorge_bread", 1}, {"berries", 3}}},
+		required = 
+		{
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "tag_berries" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_inedible" } },
+			{ items = { "tag_veggie" } },
+			{ items = { "tag_meat" } },
+			{ items = { "tag_fish" } },
+		},
+		card_def = 
+		{
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "berries", "berries_juicy" }, amount = 3 },
+		},
 	},
 	
 	gorge_fish_stew =
@@ -353,7 +601,23 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_salmonfish", 2}, {"asparagus", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_salmon" }, amount = 2, comparator = "morethan" },
+			{ items = { "asparagus" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+			{ items = { "twigs" } },
+			{ items = { "tag_bread "} },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_salmonfish" }, amount = 2 },
+			{ items = { "asparagus" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_onion_cake =
@@ -370,7 +634,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_turnip", 2}, {"bird_egg", 1}, {"kyno_flour", 1}}},
+		required = 
+		{
+			{ items = { "kyno_turnip" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_egg" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_dairy" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_turnip" }, amount = 2 },
+			{ items = { "bird_egg" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 	},
 	
 	gorge_potato_pancakes = 
@@ -386,7 +665,21 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"potato", 3}, {"kyno_flour", 1}}},
+		required = 
+		{
+			{ items = { "potato" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_egg" } },
+			{ items = { "tag_fish" } },
+		},
+		card_def = 
+		{
+			{ items = { "potato" }, amount = 3 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 	},
 	
 	gorge_potato_soup = 
@@ -402,7 +695,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"potato", 3}, {"succulent_picked", 1}}},
+		required = 
+		{
+			{ items = { "potato" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_succulent" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "potato" }, amount = 3 },
+			{ items = { "succulent_picked" }, amount = 1 },
+		},
 	},
 	
 	gorge_fishball_skewers = 
@@ -418,7 +724,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pondfish", 2}, {"twigs", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_fish" }, amount = 1 },
+			{ items = { "twigs" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pondfish" }, amount = 2 },
+			{ items = { "twigs" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_meat_skewers =
@@ -434,7 +755,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_bacon", 2}, {"twigs", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_bacon" }, amount = 2, comparator = "morethan" },
+			{ items = { "twigs" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_bacon" }, amount = 2 },
+			{ items = { "twigs" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_stone_soup = 
@@ -451,7 +787,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"rocks", 1}, {"carrot", 3}}},
+		required = 
+		{
+			{ items = { "rocks" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "rocks" }, amount = 3 },
+			{ items = { "carrot" }, amount = 1 },
+		},
 	},
 	
 	gorge_croquette = 
@@ -467,7 +816,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"potato", 2}, {"bird_egg", 1}, {"kyno_flour", 1}}},
+		required = 
+		{
+			{ items = { "potato" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_egg" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "potato_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "potato" }, amount = 2 },
+			{ items = { "bird_egg" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 	},
 	
 	gorge_roast_vegetables = 
@@ -483,7 +847,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"onion_cooked", 1}, {"asparagus_cooked", 1}, {"garlic_cooked", 1}, {"carrot_cooked", 1}}},
+		required = 
+		{
+			{ items = { "onion_cooked" }, amount = 1 },
+			{ items = { "asparagus_cooked" }, amount = 1 },
+			{ items = { "garlic_cooked" }, amount = 1 },
+			{ items = { "carrot_cooked" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "onion_cooked" }, amount = 1 },
+			{ items = { "asparagus_cooked" }, amount = 1 },
+			{ items = { "garlic_cooked" }, amount = 1 },
+			{ items = { "carrot_cooked" }, amount = 1 },
+		},
 	},
 	
 	gorge_meatloaf =
@@ -499,7 +880,22 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_bacon", 2}, {"kyno_flour", 1}, {"onion", 1}}},
+		required = 
+		{
+			{ items = { "tag_bacon" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_foliage" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_bacon" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+		},
 	},
 	
 	gorge_carrot_soup =
@@ -516,7 +912,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"sammyfood"},
-		card_def = {ingredients = {{"carrot", 3}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "carrot" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "carrot" }, amount = 3 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_fishpie =
@@ -533,7 +942,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_salmonfish", 1}, {"kyno_flour", 1}, {"kyno_radish", 2}}},
+		required = 
+		{
+			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_salmonfish" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "carrot" }, amount = 2 },
+		},
 	},
 
 	gorge_fishchips =
@@ -549,7 +973,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pondfish", 1}, {"kyno_flour", 1}, {"potato", 2}}},
+		required = 
+		{
+			{ items = { "tag_fish" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "potato" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pondfish" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "potato" }, amount = 2 },
+		},
 	},
 	
 	gorge_meatpie = 
@@ -566,7 +1005,24 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 1}, {"kyno_flour", 2}, {"carrot", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_veggie" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "potato", "potato_cooked" } },
+			{ items = { "onion", "onion" } },
+			{ items = { "tag_bacon" } },
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 2 },
+			{ items = { "carrot" }, amount = 1 },
+		},
 	},
 	
 	gorge_sliders = 
@@ -582,7 +1038,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_bacon", 2}, {"littlebread", 1}, {"foliage", 1}}},
+		required = 
+		{
+			{ items = { "tag_bacon" }, amount = 2, comparator = "morethan" },
+			{ items = { "littlebread" }, amount = 1 },
+			{ items = { "tag_foliage" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tag_bacon" }, amount = 2 },
+			{ items = { "littlebread" }, amount = 1 },
+			{ items = { "foliage" }, amount = 1 },
+		},
 	},
 	
 	gorge_jelly_roll = 
@@ -599,7 +1070,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"berries", 3}, {"kyno_flour", 1}}},
+		required = 
+		{
+			{ items = { "tag_berries" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries" }, amount = 3 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 	},
 	
 	gorge_carrot_cake =
@@ -618,7 +1102,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"sammyfood"},
-		card_def = {ingredients = {{"carrot", 2}, {"bird_egg", 1}, {"kyno_flour", 1}}},
+		required = 
+		{
+			{ items = { "carrot" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_egg" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "carrot_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "carrot" }, amount = 2 },
+			{ items = { "bird_egg" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 		
 		end,
@@ -638,7 +1137,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"garlic", 2}, {"potato", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "garlic" }, amount = 2, comparator = "morethan" },
+			{ items = { "potato" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "garlic" }, amount = 2 },
+			{ items = { "potato" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_garlicbread = 
@@ -655,7 +1169,21 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"gorge_bread", 1}, {"garlic", 3}}},
+		required = 
+		{
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "garlic" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_meat" } },
+			{ items = { "tag_fish" } },
+		},
+		card_def = 
+		{
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "garlic" }, amount = 3 },
+		},
 	},
 	
 	gorge_tomato_soup = 
@@ -672,7 +1200,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"tomato", 3}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tomato" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tomato" }, amount = 3 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_sausage =
@@ -689,7 +1230,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_bacon", 3}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_bacon" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_bacon" }, amount = 3 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_candiedfish =
@@ -706,7 +1260,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"kyno_salmonfish", 2}, {"kyno_syrup", 2}}},
+		required = 
+		{
+			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "tag_syrup" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_salmonfish" }, amount = 2 },
+			{ items = { "kyno_syrup" }, amount = 2 },
+		},
 	},
 	
 	gorge_stuffedmushroom =
@@ -723,7 +1290,22 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_white_cap", 3}, {"carrot", 1}}},
+		required = 
+		{
+			{ items = { "kyno_white_cap" }, amount = 3, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_foliage" } },
+			{ items = { "tag_succulent" } },
+			{ items = { "tag_dairy" } },
+			{ items = { "royal_jelly" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_white_cap" }, amount = 3 },
+			{ items = { "carrot" }, amount = 1 },
+		},
 	},
 	
 	gorge_bruschetta = 
@@ -739,7 +1321,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"gorge_bread", 1}, {"kyno_spotspice", 1}, {"tomato", 2}}},
+		required = 
+		{
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "tomato" }, amount = 2 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "tomato" }, amount = 2 },
+		},
 	},
 	
 	gorge_hamburger =
@@ -756,7 +1353,26 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"gorge_bread", 1}, {"meat", 1}, {"kyno_bacon", 1}, {"foliage", 1}}},
+		required = 
+		{
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "tag_bacon" }, amount = 1 },
+			{ items = { "tag_foliage" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_fish" } },
+			{ items = { "tag_dairy" } },
+			{ items = { "tag_bacon" }, amount = 1, comparator = "morethan" },
+		},
+		card_def = 
+		{
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "kyno_bacon" }, amount = 1 },
+			{ items = { "foliage" }, amount = 1 },
+		},
 	},
 	
 	gorge_fishburger =
@@ -772,7 +1388,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"gorge_bread", 1}, {"kyno_salmonfish", 1}, {"foliage", 2}}},
+		required = 
+		{
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "tag_foliage" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "kyno_salmonfish" }, amount = 1 },
+			{ items = { "foliage" }, amount = 2 },
+		},
 	},
 	
 	gorge_mushroomburger =
@@ -789,7 +1420,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"gorge_bread", 1}, {"foliage", 1}, {"kyno_white_cap", 2}}},
+		required = 
+		{
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "kyno_white_cap" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_foliage" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "kyno_white_cap" }, amount = 2 },
+			{ items = { "foliage" }, amount = 1 },
+		},
 	},
 	
 	gorge_fish_steak =
@@ -805,7 +1451,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_salmonfish_cooked", 1}, {"foliage", 1}, {"kyno_spotspice", 2}}},
+		required = 
+		{
+			{ items = { "kyno_salmonfish_cooked" }, amount = 1 },
+			{ items = { "tag_foliage" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "kyno_salmonfish" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_salmonfish_cooked" }, amount = 1 },
+			{ items = { "foliage" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 2 },
+		},
 	},
 	
 	gorge_curry = 
@@ -822,7 +1483,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 1}, {"carrot", 1}, {"kyno_spotspice", 2}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 2 },
+		},
 	},
 	
 	gorge_spaghetti =
@@ -838,7 +1514,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 1}, {"kyno_flour", 1}, {"kyno_spotspice", 1}, {"tomato", 1}}},
+		required = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+		},
 	},
 	
 	gorge_poachedfish =
@@ -854,7 +1547,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_salmonfish", 1}, {"foliage", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "tag_foliage" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_salmonfish" }, amount = 1 },
+			{ items = { "foliage" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_shepherd_pie =
@@ -871,7 +1579,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 1}, {"onion", 1}, {"garlic", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+			{ items = { "garlic" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+			{ items = { "garlic" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_candy =
@@ -889,7 +1614,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"kyno_syrup", 1}, {"honey", 3}}},
+		required = 
+		{
+			{ items = { "tag_syrup" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 3, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_syrup" }, amount = 1 },
+			{ items = { "honey" }, amount = 3 },
+		},
 		prefabs = { "kyno_hastebuff" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_hastebuff", "kyno_hastebuff")
@@ -911,7 +1649,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"berries", 1}, {"kyno_syrup", 1}, {"kyno_flour", 2}}},
+		required = 
+		{
+			{ items = { "tag_berries" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_syrup" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 2 },
+			{ items = { "kyno_syrup" }, amount = 1 },
+		},
 	},
 	
 	gorge_berry_tart =
@@ -929,7 +1682,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"berries", 2}, {"kyno_flour", 1}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "tag_berries" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_syrup" } },
+		},
+		card_def = 
+		{
+			{ items = { "berries" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	gorge_macaroni =
@@ -946,7 +1714,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_flour", 2}, {"goatmilk", 2}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_milk" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_fish" } },
+			{ items = { "tag_meat" } },
+			{ items = { "tag_bread" } },
+			{ items = { "tag_fruit" } },
+			{ items = { "tag_syrup" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 2 },
+			{ items = { "goatmilk" }, amount = 2 },
+		},
 	},
 	
 	gorge_bagel_and_fish = 
@@ -962,7 +1747,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"gorge_bread", 1}, {"goatmilk", 1}, {"kyno_salmonfish", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "tag_milk" }, amount = 1 },
+			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "tag_spotspice"}, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "kyno_salmonfish" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_grilled_cheese =
@@ -979,7 +1781,24 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"gorge_bread", 2}, {"cheese_yellow", 1}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "tag_dairy", "tag_cheese" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_fish" } },
+			{ items = { "tag_meat" } },
+			{ items = { "tag_spotspice" } },
+			{ items = { "tag_inedible"}, amount = 1, comparator = "morethan" },
+		},
+		card_def = 
+		{
+			{ items = { "bread" }, amount = 2 },
+			{ items = { "cheese_yellow" }, amount = 1 },
+			{ items = { "twigs" }, amount = 1 },
+		},
 	},
 	
 	gorge_creammushroom = 
@@ -996,7 +1815,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"goatmilk", 1}, {"succulent_picked", 1}, {"kyno_white_cap", 2}}},
+		required = 
+		{
+			{ items = { "tag_milk" }, amount = 1 },
+			{ items = { "kyno_white_cap" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_succulent" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "kyno_white_cap" }, amount = 2 },
+			{ items = { "succulent_picked" }, amount = 1 },
+		},
 	},
 	
 	gorge_manicotti =
@@ -1012,7 +1846,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_flour", 1}, {"goatmilk", 1}, {"kyno_spotspice", 1}, {"tomato", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_milk" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+		},
 	},
 	
 	gorge_fettuccine = 
@@ -1028,7 +1879,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_flour", 1}, {"garlic", 1}, {"succulent_picked", 1}, {"goatmilk", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "garlic" }, amount = 1 },
+			{ items = { "tag_succulent" }, amount = 1 },
+			{ items = { "tag_dairy" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "garlic" }, amount = 1 },
+			{ items = { "succulent_picked" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+		},
 	},
 	
 	gorge_onion_soup =
@@ -1044,7 +1912,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_flour", 1}, {"goatmilk", 1}, {"onion", 2}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_dairy" }, amount = 1 },
+			{ items = { "onion" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "onion" }, amount = 2 },
+		},
 	},
 	
 	gorge_breaded_cutlet =
@@ -1061,7 +1944,20 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 2}, {"kyno_flour", 2}}},
+		required = 
+		{
+			{ items = { "meat" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_monster" }, amount = 1, comparator = "morethan" },
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 2 },
+		},
 	},
 	
 	gorge_creamy_fish =
@@ -1077,7 +1973,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_salmonfish", 1}, {"goatmilk", 1}, {"carrot", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_milk" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "kyno_salmonfish" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_pot_roast =
@@ -1094,7 +2007,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 2}, {"kyno_aloe", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_veggie" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+			{ items = { "tag_fish" } },
+			{ items = { "tag_monster" } },
+			{ items = { "tag_chicken" } },
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 2 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_steak_frites =
@@ -1110,7 +2040,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 2}, {"potato", 2}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 2, comparator = "morethan" },
+			{ items = { "potato" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 2 },
+			{ items = { "potato" }, amount = 2 },
+		},
 	},
 	
 	gorge_shooter_sandwich =
@@ -1127,7 +2070,23 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 2}, {"gorge_bread", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_fish" } },
+			{ items = { "tomato" } },
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 2 },
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_bacon_wrapped =
@@ -1144,7 +2103,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 2}, {"kyno_bacon", 2}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1, comparator = "morethan" },
+			{ items = { "tag_bacon" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_inedible" } },
+			{ items = { "tag_bread" } },
+			{ items = { "tag_spotspice" } },
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 2 },
+			{ items = { "kyno_bacon" }, amount = 2 },
+		},
 	},
 	
 	gorge_crab_cake = 
@@ -1161,7 +2135,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_crabmeat", 1}, {"succulent_picked", 1}, {"kyno_flour", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_crab" }, amount = 1 },
+			{ items = { "tag_succulent" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_crabmeat" }, amount = 1 },
+			{ items = { "succulent_picked" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	gorge_crab_roll =
@@ -1177,7 +2168,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_crabmeat", 1}, {"foliage", 1}, {"kyno_white_cap", 1}, {"kyno_flour", 1}}},
+		required = 
+		{
+			{ items = { "tag_crab" }, amount = 1 },
+			{ items = { "tag_foliage" }, amount = 1 },
+			{ items = { "kyno_white_cap" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_crabmeat" }, amount = 1 },
+			{ items = { "foliage" }, amount = 1 },
+			{ items = { "kyno_white_cap" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 	},
 	
 	gorge_crab_ravioli =
@@ -1193,7 +2201,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_crabmeat", 1}, {"kyno_flour", 1}, {"goatmilk", 1}, {"asparagus", 1}}},
+		required = 
+		{
+			{ items = { "tag_crab" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_dairy" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_crabmeat" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+		},
 	},
 	
 	gorge_caramel_cube =
@@ -1212,7 +2237,20 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		luckitem = { luck = TUNING.KYNO_LUCK_MEDLARGE },
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"kyno_syrup", 2}, {"goatmilk", 2}}},
+		required = 
+		{
+			{ items = { "tag_syrup" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_dairy" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_syrup" }, amount = 2 },
+			{ items = { "goatmilk" }, amount = 2 },
+		},
 	},
 	
 	gorge_scone =
@@ -1228,7 +2266,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"berries", 1}, {"kyno_flour", 2}, {"goatmilk", 1}}},
+		required = 
+		{
+			{ items = { "tag_fruit" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_dairy" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 2 },
+			{ items = { "goatmilk" }, amount = 1 },
+		},
 	},
 	
 	gorge_cheesecake =
@@ -1244,7 +2297,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"berries", 2}, {"kyno_flour", 1}, {"goatmilk", 1}}},
+		required = 
+		{
+			{ items = { "tag_berries" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_dairy" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+		},
 	},
 	
 	gorge_waffles =
@@ -1262,7 +2330,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"butter", 1}, {"bird_egg", 1}, {"kyno_syrup", 2}}},
+		required = 
+		{
+			{ items = { "tag_butter" }, amount = 1 },
+			{ items = { "tag_egg" }, amount = 1 },
+			{ items = { "tag_syrup" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "butter" }, amount = 1 },
+			{ items = { "bird_egg" }, amount = 1 },
+			{ items = { "kyno_syrup" }, amount = 2 },
+		},
 	},
 	
 	kyno_syrup =
@@ -1280,10 +2363,21 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_gorge",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "fooddrink"},
-		card_def = {ingredients = {{"kyno_sap", 4}}},
+		required = 
+		{
+			{ items = { "kyno_sap" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_dairy", "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_monster" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sap" }, amount = 4 },
+		},
 	},
 	
-	-- Unimplemented Foods. 
 	slaw = 
 	{
 		test = function(cooker, names, tags) return ((names.kyno_fennel or 0) + (names.kyno_fennel_cooked or 0) >= 2) 
@@ -1298,7 +2392,20 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_fennel", 2}, {"kyno_radish", 2}}},
+		required = 
+		{
+			{ items = { "kyno_fennel" }, amount = 2, comparator = "morethan" },
+			{ items = { "kyno_radish" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_fennel" }, amount = 2 },
+			{ items = { "kyno_radish" }, amount = 2 },
+		},
 	},
 	
 	lotusbowl = 
@@ -1314,7 +2421,18 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_lotus_flower", 3}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "kyno_lotus_flower" }, amount = 3, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_lotus_flower" }, amount = 4 },
+		},
 	},
 	
 	poi = 
@@ -1330,7 +2448,18 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_taroroot", 3}, {"carrot", 1}}},
+		required = 
+		{
+			{ items = { "kyno_taroroot" }, amount = 3, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_inedible" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_taroroot" }, amount = 4 },
+		},
 	},
 	
 	cucumbersalad =
@@ -1348,7 +2477,18 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_cucumber", 3}, {"kelp", 1}}},
+		required = 
+		{
+			{ items = { "kyno_cucumber" }, amount = 3, comparator = "morethan" },
+		},
+		excluded = 
+		{
+			{ items = { "kyno_taroroot", "kyno_taroroot_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_cucumber" }, amount = 4 },
+		},
 		prefabs = { "buff_moistureimmunity" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("buff_moistureimmunity", "buff_moistureimmunity")
@@ -1371,10 +2511,23 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_waterycress", 2}, {"succulent_picked", 1}, {"carrot", 1}}},
+		required = 
+		{
+			{ items = { "kyno_waterycress" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_succulent" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 3, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_waterycress" }, amount = 2 },
+			{ items = { "succulent_picked" }, amount = 2 },
+		},
 	},
 	
-	-- Secret / Custom Foods. Why are you here by the way?	
 	bowlofgears = 
 	{
 		test = function(cooker, names, tags) return (names.gears and names.gears >= 2) and (names.wagpunk_bits and names.wagpunk_bits >= 2) end,
@@ -1392,7 +2545,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"preparedgears"},
-		card_def = {ingredients = {{"gears", 2}, {"wagpunk_bits", 2}}},
+		required = 
+		{
+			{ items = { "gears" }, amount = 2, comparator = "morethan" },
+			{ items = { "wagpunk_bits" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "gears" }, amount = 2 },
+			{ items = { "wagpunk_bits" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 
 		end,
@@ -1415,7 +2581,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		luckitem = { luck = -TUNING.KYNO_LUCK_HUGE },
-		card_def = {ingredients = {{"kyno_humanmeat", 3}, {"boneshard", 1}}},
+		required = 
+		{
+			{ items = { "kyno_humanmeat", "kyno_humanmeat_cooked", "kyno_humanmeat_dried" }, amount = 3, comparator = "morethan" },
+			{ items = { "boneshard" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_humanmeat" }, amount = 3 },
+			{ items = { "boneshard" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 
 		end,
@@ -1436,13 +2615,30 @@ local kyno_foods =
 		scale = .95,
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"poop", 1}, {"guano", 1}, {"glommerfuel", 1}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "poop" }, amount = 1 },
+			{ items = { "guano" }, amount = 1 },
+			{ items = { "glommerfuel" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "poop" }, amount = 1 },
+			{ items = { "guano" }, amount = 1 },
+			{ items = { "glommerfuel" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 		tags = {"preparedpoop"},
 		oneatenfn = function(inst, eater)
             if eater.components.bloomness ~= nil and eater:HasTag("plantkin")
 			and not (eater.components.health ~= nil and eater.components.health:IsDead()) and not eater:HasTag("playerghost") then
                 if eater.components.bloomness ~= nil then
-					eater.components.health:DoDelta(60) -- Since Wormwood can't heal from foods.
+					eater.components.health:DoDelta(60)
                     eater.components.bloomness:Fertilize(3)
                 end
             end
@@ -1462,7 +2658,22 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pondfish", 1}, {"kyno_flour", 1}, {"kyno_spotspice", 2}}},
+		required = 
+		{
+			{ items = { "tag_fish" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pondfish" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 2 },
+		},
 	},
 	
 	katfood =
@@ -1479,7 +2690,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"goatmilk", 1}, {"kyno_syrup", 1}, {"kyno_flour", 2}}},
+		required = 
+		{
+			{ items = { "tag_dairy" }, amount = 1 },
+			{ items = { "tag_syrup" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_fish" } },
+		},
+		card_def = 
+		{
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "kyno_syrup" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 2 },
+		},
 	},
 	
 	bowlofpopcorn =
@@ -1496,7 +2722,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"popcorn"},
-		card_def = {ingredients = {{"corn", 3}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "corn" }, amount = 3 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "corn_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "corn" }, amount = 3 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	figjuice =
@@ -1516,7 +2755,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"fig", 2}, {"ice", 2}}},
+		required = 
+		{
+			{ items = { "fig" }, amount = 1 },
+			{ items = { "ice" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_fish" } },
+			{ items = { "tag_meat" } },
+			{ items = { "tag_inedible" } },
+		},
+		card_def = 
+		{
+			{ items = { "fig" }, amount = 1 },
+			{ items = { "ice" }, amount = 2 },
+		},
 	},
 	
 	coconutwater =
@@ -1536,7 +2790,24 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_kokonut_halved", 1}, {"ice", 2}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "kyno_kokonut_halved" }, amount = 1 },
+			{ items = { "ice" }, amount = 2, comparator = "morethan" },
+			{ items = { "twigs" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "kyno_kokonut_halved_cooked" } },
+			{ items = { "tag_meat" } },
+			{ items = { "tag_fish" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_kokonut_halved" }, amount = 1 },
+			{ items = { "ice" }, amount = 2 },
+			{ items = { "twigs" }, amount = 1 },
+		},
 	},
 	
 	eyeballspaghetti =
@@ -1553,7 +2824,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"deerclops_eyeball", 1}, {"kyno_flour", 1}, {"tomato", 2}}},
+		required = 
+		{
+			{ items = { "deerclops_eyeball" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "deerclops_eyeball" }, amount = 1 },
+			{ items = { "tomato" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 		
 		end,
@@ -1566,25 +2852,35 @@ local kyno_foods =
 		foodtype = FOODTYPE.PREPAREDSOUL,
 		perishtime = nil,
 		fireproof = true,
-		health = 0,
-		hunger = 0,
-		sanity = 0,
-		health2 = 30,
-		hunger2 = 75,
-		sanity2 = 15,
+		health = 30,
+		hunger = 75,
+		sanity = 15,
 		cooktime = 1.2,
 		bottlesize = 2,
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"preparedsoul", "bottled"},
-		card_def = {ingredients = {{"kyno_bottle_soul", 2}, {"boneshard", 1}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "kyno_bottle_soul" }, amount = 2, comparator = "morethan" },
+			{ items = { "boneshard" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_bottle_soul" }, amount = 2 },
+			{ items = { "boneshard" }, amount = 1 },
+			{ items = { "twigs" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater:HasTag("soulstealer") and eater.components.health ~= nil and not eater.components.health:IsDead() and
 			not eater:HasTag("playerghost") and eater.components.hunger ~= nil and eater.components.sanity ~= nil then
 				eater.components.hunger:DoDelta(TUNING.SOULSTEW_HUNGER)
 				
-				-- Nice inclination makes you lose sanity. Naughty inclination heals for less.
 				if eater.wortox_inclination == "nice" then
 					eater.components.health:DoDelta(TUNING.SOULSTEW_HEALTH_NICE)
 					eater.components.sanity:DoDelta(TUNING.SOULSTEW_SANITY_NICE)
@@ -1614,7 +2910,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"kyno_flour", 1}, {"papyrus", 1}, {"honey", 2}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+			{ items = { "papyrus" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "honey" }, amount = 2 },
+			{ items = { "papyrus" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			OnFoodRollFortune(inst, eater)
 		end,
@@ -1633,7 +2944,24 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 1}, {"carrot", 1}, {"berries", 1}, {"horn", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+			{ items = { "tag_fruit" }, amount = 1 },
+			{ items = { "horn" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "berries" }, amount = 1 },
+			{ items = { "horn" }, amount = 1 },
+		},
 		prefabs = { "boneshard" },
 		oneatenfn = function(inst, eater)
 			local bones = SpawnPrefab("boneshard")
@@ -1659,7 +2987,23 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"goatmilk", 2}, {"kyno_spotspice", 2}}},
+		required = 
+		{
+			{ items = { "tag_milk" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_meat" } },
+			{ items = { "garlic", "garlic_cooked" } },
+			{ items = { "kyno_milk_koalefant" } },
+			{ items = { "tag_cheese" } },
+		},
+		card_def = 
+		{
+			{ items = { "goatmilk" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 2 },
+		},
 	},
 	
 	cheese_white = 
@@ -1676,7 +3020,23 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"goatmilk", 2}, {"kyno_spotspice", 1}, {"garlic", 1}}},
+		required = 
+		{
+			{ items = { "tag_milk" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "garlic" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_meat" } },
+			{ items = { "tag_cheese" } },
+		},
+		card_def = 
+		{
+			{ items = { "goatmilk" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "garlic" }, amount = 1 },
+		},
 	},
 	
 	cheese_koalefant =
@@ -1693,7 +3053,24 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_milk_koalefant", 2}, {"kyno_spotspice", 2}}},
+		required = 
+		{
+			{ items = { "kyno_milk_koalefant" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "garlic", "garlic_cooked" } },
+			{ items = { "goatmilk" } },
+			{ items = { "kyno_milk_beefalo" } },
+			{ items = { "tag_meat" } },
+			{ items = { "tag_cheese" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_milk_koalefant" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 2 },
+		},
 	},
 
 	milk_box = 
@@ -1710,6 +3087,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
+		required = 
+		{
+			{ items = { "ice" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_milk" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "milk_box" } },
+		},
+		card_def = 
+		{
+			{ items = { "ice" }, amount = 2 },
+			{ items = { "goatmilk" }, amount = 2 },
+		},
 		card_def = {ingredients = {{"ice", 2}, {"goatmilk", 2}}},
 	},
 	
@@ -1728,7 +3119,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"honey", 2}, {"kyno_sugar", 2}}},
+		required = 
+		{
+			{ items = { "honey" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_sugar" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "honey" }, amount = 2 },
+			{ items = { "kyno_sugar" }, amount = 2 },
+		},
 		prefabs = { "kyno_beefriendlybuff" },
         oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_beefriendlybuff", "kyno_beefriendlybuff")
@@ -1754,7 +3158,23 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "nospice"},
-		card_def = {ingredients = {{"ice", 4}}},
+		required = 
+		{
+			{ items = { "ice" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_fish" } },
+			{ items = { "tag_meat" } },
+			{ items = { "tag_veggie" } },
+			{ items = { "tag_fruit" } },
+			{ items = { "tag_milk" } },
+			{ items = { "tag_sweetener" } },
+		},
+		card_def = 
+		{
+			{ items = { "ice" }, amount = 4 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater.components.debuffable ~= nil then 
 				eater.components.debuffable:RemoveAllDebuffs()	
@@ -1775,7 +3195,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_crabmeat", 2}, {"kyno_seaweeds", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_crab" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_algae" }, amount = 1, comparator = "morethan" },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_crabmeat" }, amount = 2 },
+			{ items = { "kyno_seaweeds" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	poisonfrogglebunwich =
@@ -1793,7 +3228,21 @@ local kyno_foods =
         potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
         floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_poison_froglegs", 1}, {"kelp", 1}, {"twigs", 2}}},
+		required = 
+		{
+			{ items = { "kyno_poison_froglegs" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "froglegs", "froglegs_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_poison_froglegs" }, amount = 1 },
+			{ items = { "kelp" }, amount = 1 },
+			{ items = { "twigs" }, amount = 2 },
+		},
 		prefabs = { "kyno_frogbuff" },
         oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_frogbuff", "kyno_frogbuff")
@@ -1814,8 +3263,23 @@ local kyno_foods =
 		cooktime = 1.6,
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
-		floater = {"med", nil, 0.55},
-		card_def = {ingredients = {{"kyno_flour", 1}, {"kyno_spotspice", 1}, {"pepper", 2}}},
+		floater = TUNING.HOF_FLOATER,
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "pepper" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "pepper" }, amount = 2 },
+		},
 	},
 	
 	chocolate_black =
@@ -1832,7 +3296,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"goatmilk", 1}, {"kyno_sugar", 1}, {"kyno_twiggynuts", 2}}},
+		required = 
+		{
+			{ items = { "tag_milk" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+			{ items = { "kyno_twiggynuts" }, amount = 2, comparator = "morethan" },			
+		},
+		excluded = 
+		{
+    		{ items = { "kyno_milk_beefalo" } },
+		},
+		card_def = 
+		{
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "kyno_twiggynuts" }, amount = 2 },
+		},
 	},
 	
 	chocolate_white =
@@ -1849,7 +3328,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_milk_beefalo", 1}, {"kyno_sugar", 1}, {"kyno_twiggynuts", 2}}},
+		required = 
+		{
+			{ items = { "kyno_milk_beefalo" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+			{ items = { "kyno_twiggynuts" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_milk_beefalo" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "kyno_twiggynuts" }, amount = 2 },
+		},
 	},
 	
 	tricolordango =
@@ -1865,7 +3359,24 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"goatmilk", 1}, {"kyno_flour", 1}, {"kyno_sugar", 1}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "tag_milk" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "twigs" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "twigs"}, amount = 1 },
+		},
 	},
 	
 	friesfrench =
@@ -1881,7 +3392,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"potato", 2}, {"kyno_oil", 1}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "potato" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "potato" }, amount = 2 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "kyno_salt"}, amount = 1 },
+		},
 	},
 	
 	onionrings =
@@ -1898,7 +3424,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"onion", 2}, {"kyno_flour", 1}, {"kyno_oil", 1}}},
+		required = 
+		{
+			{ items = { "onion" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "onion" }, amount = 2 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 	},
 	
 	donuts =
@@ -1914,7 +3455,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_flour", 2}, {"kyno_sugar", 1}, {"kyno_oil", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 2, comparator = "morethan" },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 2 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+		},
 	},
 	
 	donuts_chocolate_black =
@@ -1930,7 +3486,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"chocolate_black", 1}, {"kyno_flour", 1}, {"kyno_sugar", 1}, {"kyno_oil", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "chocolate_black" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "chocolate_black" }, amount = 1 },
+		},
 	},
 	
 	donuts_chocolate_white =
@@ -1946,7 +3519,24 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"chocolate_white", 1}, {"kyno_flour", 1}, {"kyno_sugar", 1}, {"kyno_oil", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "chocolate_white" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "chocolate_white" }, amount = 1 },
+		},
 	},
 	
 	gummybeargers =
@@ -1964,7 +3554,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"bearger_fur", 1}, {"kyno_gummybug", 1}, {"honey", 2}}},
+		required = 
+		{
+			{ items = { "bearger_fur" }, amount = 1 },
+			{ items = { "tag_gummybug" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "bearger_fur" }, amount = 1 },
+			{ items = { "kyno_gummybug" }, amount = 1 },
+			{ items = { "honey" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 
 		end,
@@ -1972,7 +3577,7 @@ local kyno_foods =
 	
 	gummyworms =
 	{
-		test = function(cooker, names, tags) return names.kyno_gummybug and names.kyno_sugar and names.ancientfruit_nightvision end,
+		test = function(cooker, names, tags) return tags.gummybug and names.kyno_sugar and names.ancientfruit_nightvision end,
 		priority = 30,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_SLOW,
@@ -1985,7 +3590,22 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"ancientfruit_nightvision", 1}, {"kyno_gummybug", 1}, {"kyno_sugar", 2}}},
+		required = 
+		{
+			{ items = { "tag_gummybug" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "ancientfruit_nightvision" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_gummybug" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 2 },
+			{ items = { "ancientfruit_nightvision" }, amount = 1 },
+		},
 		prefabs = { "kyno_nightvisionbuff" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_nightvisionbuff", "kyno_nightvisionbuff")
@@ -2009,7 +3629,22 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"butter", 1}, {"kyno_salt", 1}, {"kyno_flour", 2}}},
+		required = 
+		{
+			{ items = { "tag_butter" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "butter" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 2 },
+		},
 	},
 	
 	cornincup =
@@ -2028,7 +3663,24 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"corn", 1}, {"pepper", 1}, {"kyno_salt", 1}, {"butter", 1}}},
+		required = 
+		{
+			{ items = { "kyno_salt" }, amount = 1 },
+			{ items = { "tag_butter", "tag_cheese" }, amount = 1 },
+			{ items = { "pepper" }, amount = 1 },
+			{ items = { "corn" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_salt" }, amount = 1 },
+			{ items = { "butter" }, amount = 1 },
+			{ items = { "pepper" }, amount = 1 },
+			{ items = { "corn" }, amount = 1 },
+		},
 	},
 	
 	cottoncandy =
@@ -2044,7 +3696,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_sugar", 3}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "tag_sugar" }, amount = 3, comparator = "morethan" },
+			{ items = { "twigs" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sugar" }, amount = 3 },
+			{ items = { "twigs" }, amount = 1 },
+		},
 	},
 	
 	roastedhazelnuts =
@@ -2061,7 +3726,20 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_twiggynuts", 2}, {"acorn_cooked", 2}}},
+		required = 
+		{
+			{ items = { "kyno_twiggynuts" }, amount = 2, comparator = "morethan" },
+			{ items = { "acorn_cooked" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_twiggynuts" }, amount = 2 },
+			{ items = { "acorn_cooked" }, amount = 2 },
+		},
 	},
 	
 	monstermuffin =
@@ -2071,14 +3749,29 @@ local kyno_foods =
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_SUPERSLOW,
 		health = -10,
-		hunger = 50, -- 67 Wurt.
+		hunger = 50,
 		sanity = -15,
 		cooktime = 2,
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "monstermeat"},
-		card_def = {ingredients = {{"kyno_flour", 1}, {"nightmarefuel", 1}, {"honey", 2}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "nightmarefuel" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "nightmarefuel" }, amount = 1 },
+			{ items = { "honey" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") or eater:HasTag("playermerm") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -2102,7 +3795,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_sugar", 2}, {"bird_egg", 1}, {"kyno_flour", 1}}},
+		required = 
+		{
+			{ items = { "tag_sugar" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_egg" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sugar" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "bird_egg" }, amount = 1 },
+		},
 	},
 	
 	chipsbag =
@@ -2118,7 +3826,22 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"potato", 2}, {"kyno_oil", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "potato" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "potato" }, amount = 2 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	littlebread =
@@ -2135,7 +3858,20 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_flour", 3}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 3 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 3 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	hothound =
@@ -2152,12 +3888,29 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"littlebread", 1}, {"meat", 1}, {"tomato", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "littlebread" }, amount = 1 },
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_fish" }, amount = 1 },
+		},
+		card_def = 
+		{
+			{ items = { "littlebread" }, amount = 1 },
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	milkshake =
 	{
-		test = function(cooker, names, tags) return tags.milk and tags.berries and (tags.sweetener and tags.sweetener >= 2) and not tags.syrup end,
+		test = function(cooker, names, tags) return tags.milk and tags.berries and tags.sweetener and tags.frozen and not tags.syrup end,
 		priority = 30,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_FAST,
@@ -2171,7 +3924,24 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"goatmilk", 1}, {"berries", 1}, {"honey", 2}}},
+		required = 
+		{
+			{ items = { "tag_milk" }, amount = 1 },
+			{ items = { "tag_berries" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_syrup" } }
+		},
+		card_def = 
+		{
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "berries" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 	
 	banana_pudding =
@@ -2188,7 +3958,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "monkeyqueenbribe"},
-		card_def = {ingredients = {{"cave_banana", 2}, {"goatmilk", 1}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "tag_banana" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_milk" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_banana" }, amount = 2 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	sea_pudding =
@@ -2206,7 +3991,24 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pondeel", 1}, {"kyno_mussel", 1}, {"kyno_grouper", 1}, {"kelp", 1}}},
+		required = 
+		{
+			{ items = { "pondeel" }, amount = 1 },
+			{ items = { "tag_mussel" }, amount = 1 },
+			{ items = { "kyno_grouper" }, amount = 1 },
+			{ items = { "tag_algae" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pondeel" }, amount = 1 },
+			{ items = { "kyno_mussel" }, amount = 1 },
+			{ items = { "kyno_grouper" }, amount = 1 },
+			{ items = { "kelp" }, amount = 1 },
+		},
 		prefabs = { "kyno_fishingbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_fishingbuff", "kyno_fishingbuff")
@@ -2227,7 +4029,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"honey", 2}, {"pomegranate", 1}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "tag_fruit" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 2, comparator = "morethan" },
+			{ items = { "twigs" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pomegranate" }, amount = 1 },
+			{ items = { "honey" }, amount = 2 },
+			{ items = { "twigs" }, amount = 1 },
+		},
 	},
 	
 	radishsalad =
@@ -2243,7 +4060,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_radish", 3}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_radish" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_radish" }, amount = 3 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pumpkin_soup =
@@ -2259,7 +4089,22 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pumpkin", 2}, {"butter", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "pumpkin" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_butter" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pumpkin" }, amount = 2 },
+			{ items = { "butter" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	parznip_soup =
@@ -2277,7 +4122,20 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_parznip", 3}, {"succulent_picked", 1}}},
+		required = 
+		{
+			{ items = { "kyno_parznip", "kyno_parznip_eaten", "kyno_parznip_cooked" }, amount = 3, comparator = "morethan" },
+			{ items = { "tag_succulent" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_parznip" }, amount = 3 },
+			{ items = { "succulent_picked" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 		prefabs = { "kyno_eaterbuff" },
             eater:AddDebuff("kyno_eaterbuff", "kyno_eaterbuff")
@@ -2297,7 +4155,21 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kelp", 2}, {"kyno_waterycress", 1}, {"kyno_seaweeds", 1}}},
+		required = 
+		{
+			{ items = { "tag_algae" }, amount = 3, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_fish" } },
+			{ items = { "tag_meat" } },
+		},
+		card_def = 
+		{
+			{ items = { "kelp" }, amount = 2 },
+			{ items = { "kyno_waterycress" }, amount = 1 },
+			{ items = { "kyno_seaweeds" }, amount = 1 },
+		},
 	},
 	
 	duriansplit =
@@ -2309,14 +4181,29 @@ local kyno_foods =
 		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
 		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = -5,
-		hunger = 32.5, -- 65 Wurt.
+		hunger = 32.5,
 		sanity = -15,
 		cooktime = 1,
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat"},
-		card_def = {ingredients = {{"durian", 1}, {"ice", 1}, {"cave_banana", 2}}},
+		required = 
+		{
+			{ items = { "durian" }, amount = 1 },
+			{ items = { "tag_banana" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "durian" }, amount = 1 },
+			{ items = { "kyno_banana" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") or eater:HasTag("playermerm") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -2336,14 +4223,27 @@ local kyno_foods =
 		temperature = TUNING.HOT_FOOD_BONUS_TEMP,
 		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = -15,
-		hunger = 37.5, -- 75 Wurt.
+		hunger = 37.5,
 		sanity = 0,
 		cooktime = 1.5,
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat"},
-		card_def = {ingredients = {{"durian", 1}, {"carrot", 3}}},
+		required = 
+		{
+			{ items = { "durian" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 3, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "durian" }, amount = 1 },
+			{ items = { "carrot" }, amount = 3 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") or eater:HasTag("playermerm") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -2355,8 +4255,8 @@ local kyno_foods =
 	
 	durianmeated =
 	{
-		test = function(cooker, names, tags) return (names.monstermeat or names.monstermeat_cooked) and 
-		(names.durian or names.durian_cooked) end,
+		test = function(cooker, names, tags) return (names.monstermeat or names.monstermeat_cooked or names.monstermeat_dried) 
+		and (names.durian or names.durian_cooked) end,
 		priority = 40,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_SLOW,
@@ -2367,7 +4267,21 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat"},
-		card_def = {ingredients = {{"monstermeat", 1}, {"durian", 1}, {"twigs", 2}}},
+		required = 
+		{
+			{ items = { "tag_monster" }, amount = 1 },
+			{ items = { "durian" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "monstermeat" }, amount = 1 },
+			{ items = { "durian" }, amount = 1 },
+			{ items = { "twigs" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -2386,14 +4300,30 @@ local kyno_foods =
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_FASTISH,
 		health = -10,
-		hunger = 45, -- 90 Wurt.
+		hunger = 45,
 		sanity = -30,
 		cooktime = 1,
 		scale = 1.8,
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat"},
-		card_def = {ingredients = {{"durian", 1}, {"cactus_meat", 2}, {"cactus_flower", 1}}},
+		required = 
+		{
+			{ items = { "durian" }, amount = 1 },
+			{ items = { "cactus_meat" }, amount = 2, comparator = "morethan" },
+			{ items = { "cactus_flower" }, amount = 1 },
+		},
+		excluded = 
+		{
+			{ items = { "durian_cooked" } },
+    		{ items = { "cactus_meat_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "durian" }, amount = 1 },
+			{ items = { "cactus_meat" }, amount = 2 },
+			{ items = { "cactus_flower" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") or eater:HasTag("playermerm") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -2416,7 +4346,20 @@ local kyno_foods =
 		cooktime = 1,
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"berries", 3}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "tag_berries" }, amount = 2, comparator = "morethan" },
+			{ items = { "twigs" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries" }, amount = 3 },
+			{ items = { "twigs" }, amount = 1 },
+		},
 	},
 	
 	chimas =
@@ -2434,7 +4377,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"tillweed", 2}, {"ice", 2}}},
+		required = 
+		{
+			{ items = { "tag_tillweed" }, amount = 2, comparator = "morethan" },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tillweed" }, amount = 2 },
+			{ items = { "ice" }, amount = 2 },
+		},
 	},
 	
 	antslog =
@@ -2451,7 +4407,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"livinglog", 1}, {"fig", 1}, {"kyno_twiggynuts", 2}}},
+		required = 
+		{
+			{ items = { "livinglog" }, amount = 1 },
+			{ items = { "kyno_twiggynuts" }, amount = 2, comparator = "morethan" },
+			{ items = { "fig" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "livinglog" }, amount = 1 },
+			{ items = { "kyno_twiggynuts" }, amount = 2 },
+			{ items = { "fig" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater.SoundEmitter ~= nil then
 				eater.SoundEmitter:PlaySound("dontstarve/creatures/leif/livinglog_burn")
@@ -2474,7 +4445,22 @@ local kyno_foods =
 		cooktime = .5,
 		overridebuild = "kyno_foodrecipes_cookpot",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pondeel", 1}, {"corn", 1}, {"cutlichen", 2}}},
+		required = 
+		{
+			{ items = { "pondeel" }, amount = 1 },
+			{ items = { "corn" }, amount = 1 },
+			{ items = { "cutlichen" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pondeel" }, amount = 1 },
+			{ items = { "corn" }, amount = 1 },
+			{ items = { "cutlichen" }, amount = 2 },
+		},
 	},
 	
 	livingsandwich =
@@ -2496,7 +4482,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"wereitem"},
-		card_def = {ingredients = {{"livinglog", 2}, {"monstermeat", 2}}},
+		required = 
+		{
+			{ items = { "livinglog" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_monster" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "livinglog" }, amount = 2 },
+			{ items = { "monstermeat" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 			local WEREMODE_NAMES =
 			{
@@ -2520,8 +4519,9 @@ local kyno_foods =
 	
 	lunarsoup =
 	{
-		test = function(cooker, names, tags) return (names.carrot or names.carrot_cooked) and (names.moon_cap or names.moon_cap_cooked) 
-		and ((names.rock_avocado_fruit_ripe or 0) + (names.rock_avocado_fruit_ripe_cooked or 0) >= 2) and not tags.meat end,
+		test = function(cooker, names, tags) return (names.carrot or names.carrot_cooked) and (names.moon_cap or names.moon_cap_cooked
+		or names.kyno_moon_cap_dried) and ((names.rock_avocado_fruit_ripe or 0) + (names.rock_avocado_fruit_ripe_cooked or 0) >= 2) 
+		and not tags.meat end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_MED,
@@ -2532,7 +4532,22 @@ local kyno_foods =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_FEARSLEEP,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"moon_cap", 1}, {"carrot", 1}, {"rock_avocado_fruit_ripe", 2}}},
+		required = 
+		{
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "moon_cap" }, amount = 1 },
+			{ items = { "rock_avocado_fruit_ripe" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "moon_cap" }, amount = 1 },
+			{ items = { "rock_avocado_fruit_ripe" }, amount = 2 },
+		},
 		prefabs = { "buff_sleepresistance", "kyno_fearbuff" },
 		oneatenfn = function(inst, eater)
             if eater.components.grogginess ~= nil and
@@ -2559,7 +4574,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat"},
-		card_def = {ingredients = {{"wobster_sheller_land", 1}, {"kyno_grouper", 1}, {"kyno_turnip", 2}}},
+		required = 
+		{
+			{ items = { "tag_wobster" }, amount = 1 },
+			{ items = { "kyno_grouper" }, amount = 1 },
+			{ items = { "kyno_turnip" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "wobster_sheller_land" }, amount = 1 },
+			{ items = { "kyno_grouper" }, amount = 1 },
+			{ items = { "kyno_turnip" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -2572,8 +4602,8 @@ local kyno_foods =
 	
 	wobstermonster =
 	{
-		test = function(cooker, names, tags) return tags.wobster and (names.monstermeat or names.monstermeat_cooked) and
-		(tags.veggie and tags.veggie >= 2) end,
+		test = function(cooker, names, tags) return tags.wobster and (names.monstermeat or names.monstermeat_cooked
+		or names.monstermeat_dried) and (tags.veggie and tags.veggie >= 2) end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_MED,
@@ -2587,7 +4617,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat"},
-		card_def = {ingredients = {{"wobster_sheller_land", 1}, {"monstermeat", 1}, {"carrot", 2}}},
+		required = 
+		{
+			{ items = { "tag_wobster" }, amount = 1 },
+			{ items = { "tag_monster" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "wobster_sheller_land" }, amount = 1 },
+			{ items = { "monstermeat" }, amount = 1 },
+			{ items = { "carrot" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -2600,7 +4645,8 @@ local kyno_foods =
 	
 	spidercake =
 	{
-		test = function(cooker, names, tags) return names.spider and (names.monstermeat or names.monstermeat_cooked) and tags.egg and tags.flour end,
+		test = function(cooker, names, tags) return names.spider and (names.monstermeat or names.monstermeat_cooked 
+		or names.monstermeat_dried) and tags.egg and tags.flour end,
 		priority = 1,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_SUPERSLOW,
@@ -2608,12 +4654,28 @@ local kyno_foods =
 		hunger = 37.5,
 		sanity = -20,
 		cooktime = 2,
-		-- oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_SPIDER,
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat"},
-		card_def = {ingredients = {{"spider", 1}, {"monstermeat", 1}, {"bird_egg", 1}, {"kyno_flour", 1}}},
+		required = 
+		{
+			{ items = { "spider" }, amount = 1 },
+			{ items = { "tag_monster" }, amount = 1 },
+			{ items = { "tag_egg" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "spider" }, amount = 1 },
+			{ items = { "monstermeat" }, amount = 1 },
+			{ items = { "bird_egg" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -2621,8 +4683,6 @@ local kyno_foods =
 				eater.components.health:DoDelta(20)
 				eater.components.sanity:DoDelta(20)
 			end
-			
-			-- eater:AddDebuff("kyno_spiderbuff", "kyno_spiderbuff") -- Do we really want this?
 		end,
 	},
 	
@@ -2631,7 +4691,7 @@ local kyno_foods =
 		test = function(cooker, names, tags) return (tags.sugar and tags.sugar >= 2) and ((names.kyno_wheat or 0) + (names.kyno_wheat_cooked or 0) >= 2) end,
 		priority = 30,
 		foodtype = FOODTYPE.GOODIES,
-		perishtime = 9000000, -- Fallout reference?!
+		perishtime = 9000000,
 		health = 5,
 		hunger = 20,
 		sanity = 15,
@@ -2641,7 +4701,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		luckitem = { luck = TUNING.KYNO_LUCK_SUPERTINY },
-		card_def = {ingredients = {{"kyno_sugar", 2}, {"kyno_wheat", 2}}},
+		required = 
+		{
+			{ items = { "tag_sugar" }, amount = 2, comparator = "morethan" },
+			{ items = { "kyno_wheat" }, amount = 2 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sugar" }, amount = 2 },
+			{ items = { "kyno_wheat" }, amount = 2 },
+		},
 	},
 	
 	onigiris =
@@ -2658,7 +4731,22 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_rice", 2}, {"kyno_seaweeds", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_rice" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "tag_algae" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_rice" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_seaweeds" }, amount = 1 },
+		},
 	},
 	
 	omurice =
@@ -2675,7 +4763,22 @@ local kyno_foods =
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_rice", 2}, {"bird_egg", 1}, {"tomato", 1}}},
+		required = 
+		{
+			{ items = { "tag_egg" }, amount = 1 },
+			{ items = { "kyno_rice" }, amount = 2, comparator = "morethan" },
+			{ items = { "tomato" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "bird_egg" }, amount = 1 },
+			{ items = { "kyno_rice" }, amount = 2 },
+			{ items = { "tomato" }, amount = 1 },
+		},
 	},
 	
 	paella =
@@ -2694,7 +4797,24 @@ local kyno_foods =
 		stacksize = 2,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_rice", 1}, {"kyno_mussel", 1}, {"pondfish", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_rice" }, amount = 1 },
+			{ items = { "tag_mussel" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "tag_fish" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_rice" }, amount = 1 },
+			{ items = { "kyno_mussel" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "pondfish" }, amount = 1 },
+		},
 	},
 	
 	pizza_tropical =
@@ -2711,7 +4831,24 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pondfish", 1}, {"kyno_flour", 1}, {"goatmilk", 1}, {"kyno_pineapple_halved", 1}}},
+		required = 
+		{
+			{ items = { "tag_fish" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_dairy" }, amount = 1 },
+			{ items = { "kyno_pineapple_halved", "kyno_pineapple_halved_cooked" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pondfish" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+		},
 	},
 	
 	pinacolada = 
@@ -2731,7 +4868,25 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "fooddrink"},
-		card_def = {ingredients = {{"kyno_pineapple_halved", 1}, {"kyno_kokonut_halved", 1}, {"honey", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "kyno_kokonut_halved" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "kyno_pineapple_halved_cooked" } },
+			{ items = { "kyno_kokonut_halved_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "kyno_kokonut_halved" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 	
 	smores =
@@ -2747,7 +4902,22 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_flour", 1}, {"kyno_sugar", 2}, {"chocolate_black", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sugar" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_chocolate" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sugar" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "chocolate_black" }, amount = 1 },
+		},
 	},
 	
 	moonbutterflymuffin =
@@ -2764,7 +4934,21 @@ local kyno_foods =
 		nameoverride = "BUTTERFLYMUFFIN",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"moonbutterflywings", 1}, {"carrot", 1}, {"twigs", 2}}},
+		required = 
+		{
+			{ items = { "moonbutterflywings" }, amount = 1},
+			{ items = { "tag_veggie" }, amount = 1, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_meat" } },
+		},
+		card_def = 
+		{
+			{ items = { "moonbutterflywings" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "twigs" }, amount = 2 },
+		},
 	},
 	
 	sugarflymuffin =
@@ -2780,7 +4964,21 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_sugarflywings", 1}, {"carrot", 1}, {"twigs", 2}}},
+		required = 
+		{
+			{ items = { "kyno_sugarflywings" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_meat" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sugarflywings" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "twigs" }, amount = 2 },
+		},
 	},
 	
 	meatwaltz =
@@ -2797,7 +4995,24 @@ local kyno_foods =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_INSPIRATION,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 1}, {"gorge_bread", 1}, {"tomato", 1}, {"onion", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater.components.singinginspiration ~= nil then
 				eater.components.singinginspiration:DoDelta(TUNING.KYNO_INSPIRATIONBUFF)
@@ -2822,7 +5037,24 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"baconeggs", 1}, {"kyno_flour", 1}, {"butter", 1}, {"kyno_syrup", 1}}},
+		required = 
+		{
+			{ items = { "baconeggs" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_butter" }, amount = 1 },
+			{ items = { "tag_syrup" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "baconeggs" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "butter" }, amount = 1 },
+			{ items = { "kyno_syrup" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater.components.mightiness ~= nil then
 				eater.components.mightiness:DoDelta(TUNING.KYNO_MIGHTINESSBUFF)
@@ -2843,7 +5075,24 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_flour", 1}, {"smallmeat", 1}, {"carrot", 1}, {"kyno_oil", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1, comparator = "morethan" },
+			{ items = { "tag_meat" }, amount = 1, comparator = "lessthan" },
+			{ items = { "tag_oil" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "smallmeat" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+		},
 	},
 	
 	coxinha =
@@ -2859,7 +5108,24 @@ local kyno_foods =
 		cooktime = 1.5,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"drumstick", 1}, {"kyno_flour", 1}, {"kyno_oil", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "garlic" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "garlic" }, amount = 1 },
+		},
 	},
 	
 	crabkingfeast =
@@ -2878,7 +5144,24 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
-		card_def = {ingredients = {{"kyno_crabkingmeat", 1}, {"kyno_spotspice", 1}, {"corn", 1}, {"onion", 1}}},
+		required = 
+		{
+			{ items = { "kyno_crabkingmeat" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "corn" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "corn_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_crabkingmeat" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "corn" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+		},
 		prefabs = { "kyno_crabbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_crabbuff", "kyno_crabbuff")
@@ -2898,7 +5181,19 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_pineapple_halved", 1}, {"twigs", 3}}},
+		required = 
+		{
+			{ items = { "kyno_pineapple_halved", "kyno_pineapple_halved_cooked" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_meat" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "twigs" }, amount = 3 },
+		},
 	},
 	
 	avocadotoast =
@@ -2914,7 +5209,21 @@ local kyno_foods =
 		cooktime = 1.3,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"rock_avocado_fruit_ripe", 2}, {"gorge_bread", 1}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "rock_avocado_fruit_ripe" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_bread" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "rock_avocado_fruit_ripe" }, amount = 2 },
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "twigs" }, amount = 1 },
+		},
 	},
 	
 	ricepudding =
@@ -2930,7 +5239,22 @@ local kyno_foods =
 		cooktime = 0.8,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_rice", 2}, {"goatmilk", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_rice" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_dairy" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_rice" }, amount = 2 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	sharksushi =
@@ -2947,7 +5271,20 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		luckitem = { luck = -TUNING.KYNO_LUCK_MEDLARGE },
-		card_def = {ingredients = {{"kyno_shark_fin", 1}, {"kyno_rice", 3}}},
+		required = 
+		{
+			{ items = { "kyno_shark_fin" }, amount = 1 },
+			{ items = { "kyno_rice" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_shark_fin" }, amount = 1 },
+			{ items = { "kyno_rice" }, amount = 3 },
+		},
 		oneatenfn = function(inst, eater)
 			OnFoodNaughtiness(inst, eater)
 		end,
@@ -2965,7 +5302,24 @@ local kyno_foods =
 		cooktime = 0.7,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"wobster_sheller_land", 1}, {"kyno_spotspice", 1}, {"kyno_flour", 1}, {"kyno_oil", 1}}},
+		required = 
+		{
+			{ items = { "tag_wobster" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "wobster_sheller_land" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+		},
 	},
 	
 	lazypurrito =
@@ -2980,7 +5334,22 @@ local kyno_foods =
 		cooktime = 1.3,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_beanbugs", 1}, {"kyno_flour", 1}, {"kyno_rice", 2}}},
+		required = 
+		{
+			{ items = { "tag_beanbug" }, amount = 1 },
+			{ items = { "kyno_rice" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_beanbugs" }, amount = 1 },
+			{ items = { "kyno_rice" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 	},
 	
 	horchata = 
@@ -2999,7 +5368,24 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "fooddrink"},
-		card_def = {ingredients = {{"kyno_rice", 1}, {"goatmilk", 1}, {"honey", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_rice" }, amount = 1 },
+			{ items = { "tag_dairy" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_rice" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 	
 	wobstercocktail =
@@ -3018,7 +5404,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"wobster_sheller_land", 1}, {"tomato", 1}, {"pepper", 2}}},
+		required = 
+		{
+			{ items = { "tag_wobster" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "pepper" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_inedible" } },
+		},
+		card_def = 
+		{
+			{ items = { "wobster_sheller_land" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "pepper" }, amount = 2 },
+		},
 	},
 	
 	pomegranatetea =
@@ -3036,7 +5437,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "fooddrink"},
-		card_def = {ingredients = {{"pomegranate", 1}, {"ice", 1}, {"honey", 2}}},
+		required = 
+		{
+			{ items = { "pomegranate" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pomegranate" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+			{ items = { "honey" }, amount = 2 },
+		},
 	},
 	
 	pomegranatepie =
@@ -3053,7 +5469,23 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"pomegranate", 1}, {"twigs", 1}, {"kyno_flour", 1}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "pomegranate" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pomegranate" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "twigs" }, amount = 1 },
+		},
 	},
 	
 	pineapplecake =
@@ -3070,7 +5502,24 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
-		card_def = {ingredients = {{"kyno_pineapple_halved", 1}, {"bird_egg", 1}, {"kyno_flour", 1}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "kyno_pineapple_halved", "kyno_pineapple_halved_cooked" }, amount = 1 },
+			{ items = { "tag_egg" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "bird_egg" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	pasty_meat =
@@ -3086,7 +5535,24 @@ local kyno_foods =
 		cooktime = .7,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 1}, {"kyno_flour", 1}, {"carrot", 1}, {"kyno_oil", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_wobster" } },
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+		},
 	},
 	
 	pasty_cheese =
@@ -3101,7 +5567,24 @@ local kyno_foods =
 		cooktime = .7,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"cheese_yellow", 1}, {"kyno_flour", 1}, {"kyno_spotspice", 1}, {"kyno_oil", 1}}},
+		required = 
+		{
+			{ items = { "tag_cheese" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "cheese_yellow" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+		},
 	},
 	
 	brigadeiro =
@@ -3116,7 +5599,22 @@ local kyno_foods =
 		cooktime = 1,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"chocolate_black", 1}, {"kyno_sugar", 1}, {"kyno_twiggynuts", 2}}},
+		required = 
+		{
+			{ items = { "chocolate_black" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+			{ items = { "kyno_twiggynuts" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "chocolate_black" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "kyno_twiggynuts" }, amount = 2 },
+		},
 	},
 	
 	regularlasagna =
@@ -3132,7 +5630,25 @@ local kyno_foods =
 		cooktime = .5,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"meat", 1}, {"tomato", 2}, {"kyno_flour", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_monster" } },
+			{ items = { "tag_spotspice" } },
+			{ items = { "tag_wobster" } },
+			{ items = { "tag_dairy" } },
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "tomato" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 	},
 	
 	fltsandwich =
@@ -3150,7 +5666,24 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_moon_froglegs", 1}, {"tomato", 1}, {"foliage", 1}, {"kyno_waterycress", 1}}},
+		required = 
+		{
+			{ items = { "kyno_moon_froglegs" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "tag_algae" }, amount = 1 },
+			{ items = { "tag_foliage" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_moon_froglegs" }, amount = 1 },
+			{ items = { "tomato" }, amount = 1 },
+			{ items = { "kelp" }, amount = 1 },
+			{ items = { "foliage" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_planardefensebuff", "kyno_planardefensebuff")
 		end,
@@ -3171,7 +5704,20 @@ local kyno_foods =
 		potlevel = "high",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_rice", 1}, {"kyno_beanbugs", 2}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "kyno_rice" }, amount = 1},
+			{ items = { "tag_beanbug" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_rice" }, amount = 2 },
+			{ items = { "kyno_beanbugs" }, amount = 2 },
+		},
 	},
 
 	trufflesgrinder =
@@ -3191,7 +5737,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"truffles"},
-		card_def = {ingredients = {{"kyno_truffles", 2}, {"kyno_flour", 1}, {"meat", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "kyno_truffles" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "kyno_truffles" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+		},
 		prefabs = { "kyno_trufflesbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_trufflesbuff", "kyno_trufflesbuff")
@@ -3214,7 +5775,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat", "acidrainimmune"},
-		card_def = {ingredients = {{"kyno_sporecap", 2}, {"kyno_flour", 1}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sporecap" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sporecap" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -3242,7 +5818,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat", "acidrainimmune"},
-		card_def = {ingredients = {{"kyno_sporecap_dark", 2}, {"carrot", 1}, {"twigs", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sporecap_dark" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_veggie" }, amount = 1 },
+			{ items = { "twigs" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sporecap_dark" }, amount = 2 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "twigs" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -3255,7 +5846,6 @@ local kyno_foods =
 		end,
 	},
 	
-	-- Mandrake Soup but with meat instead.
 	swordfishfeast =
 	{
 		test = function(cooker, names, tags) return tags.swordfish and tags.cheese and (names.fig or names.fig_cooked) and tags.sweetener end,
@@ -3271,7 +5861,24 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"sharkboifood", "exquisite"},
-		card_def = {ingredients = {{"kyno_swordfish_dead", 1}, {"cheese_yellow", 1}, {"fig", 1}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "tag_swordfish" }, amount = 1 },
+			{ items = { "tag_cheese" }, amount = 1 },
+			{ items = { "fig" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_swordfish_dead" }, amount = 1 },
+			{ items = { "cheese_yellow" }, amount = 1 },
+			{ items = { "fig" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 
 		end,
@@ -3291,7 +5898,21 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monkeyqueenbribe"},
-		card_def = {ingredients = {{"wobster_monkeyisland_land", 1}, {"cave_banana", 1}, {"twigs", 2}}},
+		required = 
+		{
+			{ items = { "wobster_monkeyisland_land" }, amount = 1 },
+			{ items = { "tag_banana" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "wobster_monkeyisland_land" }, amount = 1 },
+			{ items = { "kyno_banana" }, amount = 1 },
+			{ items = { "twigs" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater.components.inventory ~= nil and eater.components.cursable ~= nil
 			and not (eater.components.health ~= nil and eater.components.health:IsDead()) and 
@@ -3320,7 +5941,22 @@ local kyno_foods =
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
 		prefabs = { "kyno_craftingbuff" },
-		card_def = {ingredients = {{"kyno_brainrock_coral", 1}, {"kyno_jellyfish", 1}, {"kyno_seaweeds", 2}}},
+		required = 
+		{
+			{ items = { "kyno_brainrock_coral" }, amount = 1 },
+			{ items = { "tag_jellyfish" }, amount = 1 },
+			{ items = { "tag_algae" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_inedible" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_brainrock_coral" }, amount = 1 },
+			{ items = { "kyno_jellyfish" }, amount = 1 },
+			{ items = { "kyno_seaweeds" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_craftingbuff", "kyno_craftingbuff")
 		end,
@@ -3339,7 +5975,24 @@ local kyno_foods =
 		potlevel = "low",
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"drumstick", 1}, {"kyno_flour", 1}, {"kyno_oil", 1}, {"garlic", 1}}},
+		required = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
 	},
 	
 	chickenwings =
@@ -3358,7 +6011,24 @@ local kyno_foods =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_BERSERKER,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"drumstick", 1}, {"kyno_oil", 1}, {"kyno_spotspice", 1}, {"firenettles", 1}}},
+		required = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "tag_fireweed" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "firenettles" }, amount = 1 },
+		},
 		prefabs = { "kyno_berserkerbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_berserkerbuff", "kyno_berserkerbuff")
@@ -3377,7 +6047,24 @@ local kyno_foods =
 		cooktime = 1,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"drumstick", 1}, {"foliage", 1}, {"kyno_chicken_egg", 1}, {"gorge_bread", 1}}},
+		required = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "tag_foliage" }, amount = 1 },
+			{ items = { "tag_chickenegg" }, amount = 1 },
+			{ items = { "tag_bread" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "foliage" }, amount = 1 },
+			{ items = { "kyno_chicken_egg" }, amount = 1 },
+			{ items = { "bread" }, amount = 1 },
+		},
 	},
 	
 	chickeneggsoup =
@@ -3394,7 +6081,24 @@ local kyno_foods =
 		cooktime = 1.2,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_chicken_egg", 1}, {"succulent_picked", 1}, {"kyno_spotspice", 1}, {"onion", 1}}},
+		required = 
+		{
+			{ items = { "tag_chickenegg" }, amount = 1 },
+			{ items = { "tag_succulent" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_chicken_egg" }, amount = 1 },
+			{ items = { "succulent_picked" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+		},
 	},
 	
 	chickeneggstew =
@@ -3410,7 +6114,24 @@ local kyno_foods =
 		cooktime = 1.3,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"drumstick", 1}, {"kyno_chicken_egg", 1}, {"kyno_spotspice", 1}, {"kyno_aloe", 1}}},
+		required = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "tag_chickenegg" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_aloe" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "kyno_chicken_egg" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_aloe" }, amount = 1 },
+		},
 	},
 	
 	chickenrotisserie =
@@ -3426,7 +6147,22 @@ local kyno_foods =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_HUNGERRATE,
 		overridebuild = "kyno_foodrecipes_cookpot1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_chicken2", 1}, {"kyno_spotspice", 1}, {"carrot", 2}}},
+		required = 
+		{
+			{ items = { "tag_chicken" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_inedible" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_chicken2" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "carrot" }, amount = 2 },
+		},
 		prefabs = { "kyno_hungerratebuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_hungerratebuff", "kyno_hungerratebuff")
@@ -3449,7 +6185,22 @@ local kyno_foods =
 		potlevel = "low",
 		luckitem = { luck = TUNING.KYNO_LUCK_MEDLARGE },
 		tags = {"nospice", "itemshowcaser_valid"},
-		card_def = {ingredients = {{"kyno_shark_fin", 1}, {"kyno_sugar", 1}, {"honey", 2}}},
+		required = 
+		{
+			{ items = { "kyno_shark_fin" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_shark_fin" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "honey" }, amount = 2 },
+		},
 		oneatenfn = function(inst, eater)
 
 		end,
