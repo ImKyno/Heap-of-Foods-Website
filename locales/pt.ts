@@ -1,5 +1,7 @@
 const pt = {
   main: {
+    title: "Heap of Foods",
+    description: "Um livro de receitas completo para o Mod Heap of Foods!",
     close: "Retornar",
     previous: "Anterior",
     next: "Próximo",
@@ -27,6 +29,33 @@ const pt = {
       light: "Tema Claro",
     },
     lang: "Idioma",
+  },
+
+  pages: {
+    home: {
+      title: "Inicio",
+    },
+    cookpot: {
+      title: "Panela",
+    },
+    cookpot_warly: {
+      title: "Especiais do Chefe",
+    },
+    cookpot_keg: {
+      title: "Barril de Madeira",
+    },
+    cookpot_jar: {
+      title: "Jarra de Conserva",
+    },
+    cookpot_seasonal: {
+      title: "Sazonais",
+    },
+    ingredients: {
+      title: "Ingredientes",
+    },
+    settings: {
+      title: "Configurações",
+    },
   },
 
   footer: {

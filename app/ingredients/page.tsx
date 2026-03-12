@@ -2,7 +2,9 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
+import { usePageTitle } from "@/components/PageTitle";
 import ingredients from "@/data/ingredients.json";
+import Fuse from "fuse.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -78,6 +80,8 @@ const SortOption = ({ value, label, current, onChange }: SortOptionProps) => (
 
 export default function Ingredients() {
   const { t } = useTranslation();
+
+  usePageTitle(t("pages.ingredients.title")); 
 
   const SPOILAGE_LABELS = useMemo(
     () => ({
@@ -205,16 +209,13 @@ export default function Ingredients() {
     return arr;
   }, [filteredIngredients, sortType, sortDirection, t]);
 
-  // SEARCHED INGREDIENTS
-  const searchedIngredients = useMemo(() => {
-    if (!search.trim()) return [];
-
-    const expanded = sortedIngredients.flatMap((ingredient: any) => {
+  const expandedIngredients = useMemo(() => {
+    return sortedIngredients.flatMap((ingredient: any) => {
       const list = [
         {
           ...ingredient,
           variant: "normal",
-          searchName: t(`ingredients.${ingredient.name}`),
+          label: t(`ingredients.${ingredient.name}`),
         },
       ];
 
@@ -222,7 +223,7 @@ export default function Ingredients() {
         list.push({
           ...ingredient,
           variant: "cooked",
-          searchName: t(`ingredients.${ingredient.name}_cooked`),
+          label: t(`ingredients.${ingredient.name}_cooked`),
         });
       }
 
@@ -230,19 +231,33 @@ export default function Ingredients() {
         list.push({
           ...ingredient,
           variant: "dried",
-          searchName: t(`ingredients.${ingredient.name}_dried`),
+          label: t(`ingredients.${ingredient.name}_dried`),
         });
       }
 
       return list;
     });
+  }, [sortedIngredients, t]);
 
-    return expanded
-      .filter((item: any) =>
-        item.searchName.toLowerCase().includes(search.toLowerCase()),
-      )
-      .slice(0, 8);
-  }, [search, sortedIngredients, t]);
+  // FUZZY SEARCH
+  const fuse = useMemo(() => {
+    return new Fuse(expandedIngredients, {
+      keys: ["label"],
+      threshold: 0.35,
+      ignoreLocation: true,
+      minMatchCharLength: 2,
+    });
+  }, [expandedIngredients]);
+
+  // SEARCHED INGREDIENTS
+  const searchedIngredients = useMemo(() => {
+    if (!search.trim()) return [];
+
+    return fuse
+      .search(search)
+      .slice(0, 8)
+      .map((result) => result.item);
+  }, [search, fuse]);
 
   // OUTSIDE CLICK
   useEffect(() => {
@@ -448,7 +463,7 @@ export default function Ingredients() {
                         className="w-10 h-10 object-contain"
                       />
                       <span className="text-sm font-semibold">
-                        {ingredient.searchName}
+                        {ingredient.label}
                       </span>
                     </div>
                   ))}
@@ -738,7 +753,7 @@ export default function Ingredients() {
                           e.stopPropagation();
                           goPrev();
                         }}
-                        className="text-5xl text-white/70 hover:text-white transition cursor-pointer"
+                        className="text-5xl text-white hover:text-white/80 dark:text-white/70 dark:hover:text-white/90 transition cursor-pointer"
                       >
                         <FontAwesomeIcon icon={faCircleChevronLeft} />
                       </button>
@@ -878,7 +893,7 @@ export default function Ingredients() {
                         e.stopPropagation();
                         goNext();
                       }}
-                      className="text-5xl text-white/70 hover:text-white transition cursor-pointer"
+                      className="text-5xl text-white hover:text-white/80 dark:text-white/70 dark:hover:text-white/90 transition cursor-pointer"
                     >
                       <FontAwesomeIcon icon={faCircleChevronRight} />
                     </button>

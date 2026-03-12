@@ -2,9 +2,11 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
+import { usePageTitle } from "@/components/PageTitle";
 import recipes from "@/data/recipes_cookpot_warly.json";
 import { recommendRecipe } from "@/lib/recommend";
 import SeeAlso from "@/components/SeeAlso";
+import Fuse from "fuse.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -122,6 +124,8 @@ const SortOption = ({ value, label, current, onChange }: SortOptionProps) => (
 
 export default function CookPotWarly() {
   const { t } = useTranslation();
+
+  usePageTitle(t("pages.cookpot_warly.title")); 
 
   const SPOILAGE_LABELS = useMemo(
     () => ({
@@ -246,17 +250,31 @@ export default function CookPotWarly() {
     return arr;
   }, [filteredRecipes, sortType, sortDirection, t]);
 
+  const recipesWithLabel = useMemo(() => {
+    return sortedRecipes.map((r) => ({
+      ...r,
+      label: t(`recipes_warly.${r.name}`),
+    }));
+  }, [sortedRecipes, t]);
+
+  // FUZZY SEARCH
+  const fuse = useMemo(() => {
+    return new Fuse(recipesWithLabel, {
+      keys: ["label"],
+      threshold: 0.4,
+      ignoreLocation: true,
+    });
+  }, [recipesWithLabel]);
+
   // SEARCHED RECIPES
   const searchedRecipes = useMemo(() => {
     if (!search.trim()) return [];
-    return sortedRecipes
-      .filter((recipe: any) =>
-        t(`recipes_warly.${recipe.name}`)
-          .toLowerCase()
-          .includes(search.toLowerCase()),
-      )
-      .slice(0, 8);
-  }, [search, sortedRecipes]);
+  
+    return fuse
+      .search(search)
+      .slice(0, 8)
+      .map((result) => result.item);
+  }, [search, fuse]);
 
   // OUTSIDE CLICK
   useEffect(() => {
@@ -780,7 +798,7 @@ export default function CookPotWarly() {
                       e.stopPropagation();
                       goPrev();
                     }}
-                    className="text-5xl text-white/70 hover:text-white transition cursor-pointer"
+                    className="text-5xl text-white hover:text-white/80 dark:text-white/70 dark:hover:text-white/90 transition cursor-pointer"
                   >
                     <FontAwesomeIcon icon={faCircleChevronLeft} />
                   </button>
@@ -978,7 +996,7 @@ export default function CookPotWarly() {
                     e.stopPropagation();
                     goNext();
                   }}
-                  className="text-5xl text-white/70 hover:text-white transition cursor-pointer"
+                  className="text-5xl text-white hover:text-white/80 dark:text-white/70 dark:hover:text-white/90 transition cursor-pointer"
                 >
                   <FontAwesomeIcon icon={faCircleChevronRight} />
                 </button>

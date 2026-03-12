@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import { t, useTranslation, type Locale } from "@/lib/i18n";
+import { usePageTitle } from "@/components/PageTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSun,
@@ -54,6 +55,8 @@ export default function Settings({
   };
 
   const currentLang = LANGUAGES.find((l) => l.code === language);
+
+  usePageTitle(t("pages.settings.title")); 
 
   return (
     <div className="min-h-screen bg-zinc-300 dark:bg-zinc-950 text-zinc-900 dark:text-white flex flex-col items-center p-8 pt-24">

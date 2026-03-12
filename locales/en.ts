@@ -1,5 +1,7 @@
 const en = {
   main: {
+    title: "Heap of Foods",
+    description: "A complete recipes sheet for the Heap of Foods Mod!",
     close: "Back",
     previous: "Previous",
     next: "Next",
@@ -10,6 +12,33 @@ const en = {
     cookpot_jar: "Preserves Jar",
     cookpot_seasonal: "Seasonal",
     ingredients: "Ingredients",
+  },
+
+  pages: {
+    home: {
+      title: "Home",
+    },
+    cookpot: {
+      title: "Crock Pot",
+    },
+    cookpot_warly: {
+      title: "Chef's Specials",
+    },
+    cookpot_keg: {
+      title: "Wooden Keg",
+    },
+    cookpot_jar: {
+      title: "Preserves Jar",
+    },
+    cookpot_seasonal: {
+      title: "Seasonal",
+    },
+    ingredients: {
+      title: "Ingredients",
+    },
+    settings: {
+      title: "Settings",
+    },
   },
 
   search: {
