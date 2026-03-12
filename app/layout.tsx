@@ -16,7 +16,6 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-// TO DO: META DATA
 export const metadata: Metadata = {
   title: "Heap of Foods - Recipes Sheet",
   description: "A complete recipes sheet for the Heap of Foods Mod!",
@@ -26,10 +25,10 @@ export const metadata: Metadata = {
   publisher: "Kyno",
   icons: {
     icon: [
-      { url: "/icons/icon_hof.png", sizes: "any", type: "image/png" },
+      { url: "/icons/misc/icon_hof.png", sizes: "any", type: "image/png" },
     ],
     apple: [
-      { url: "/icons/icon_hof.png", sizes: "any", type: "image/png" },
+      { url: "/icons/misc/icon_hof.png", sizes: "any", type: "image/png" },
     ],
   },
 };
@@ -38,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html 
       lang="en"
+      suppressHydrationWarning
     >
       <body className={`${plusJakarta.className} antialiased flex flex-col min-h-screen`}>
         <ThemeProvider>

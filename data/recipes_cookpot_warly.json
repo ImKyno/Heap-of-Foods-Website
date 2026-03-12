@@ -1,0 +1,1629 @@
+[
+  {
+    "name": "musselbouillabaise",
+    "priority": 30,
+    "foodtype": "MEAT",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 60,
+    "hunger": 37.5,
+    "sanity": 15,
+    "cooktime": 2,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_mussel"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_mussel_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_mussel"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "sweetpotatosouffle",
+    "priority": 30,
+    "foodtype": "VEGGIE",
+    "spoilage": 19200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 20,
+    "hunger": 50,
+    "sanity": 15,
+    "cooktime": 2,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_sweetpotato"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_sweetpotato_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sweetpotato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "gorge_meat_stew",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 7200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 15,
+    "hunger": 200,
+    "sanity": 10,
+    "cooktime": 1,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "gorge_cheeseburger",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 3840,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 50,
+    "hunger": 100,
+    "sanity": 30,
+    "cooktime": 1.2,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_cheese",
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_bacon",
+          "kyno_bacon_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "gorge_pizza",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 9600,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 40,
+    "hunger": 150,
+    "sanity": 20,
+    "cooktime": 2.5,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "gorge_meat_wellington",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 9600,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 20,
+    "hunger": 150,
+    "sanity": 10,
+    "cooktime": 1,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "amount": 1,
+        "comparator": "morethan"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "gorge_trifle",
+    "priority": 35,
+    "foodtype": "VEGGIE",
+    "spoilage": 7200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 15,
+    "hunger": 37.5,
+    "sanity": 60,
+    "cooktime": 1,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "bubbletea",
+    "priority": 30,
+    "foodtype": "GOODIES",
+    "spoilage": 2880,
+    "temperature": -40,
+    "temperatureDuration": 10,
+    "debuff": true,
+    "health": 20,
+    "hunger": 12.5,
+    "sanity": 33,
+    "cooktime": 0.5,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_piko"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_piko"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "frenchonionsoup",
+    "priority": 5,
+    "foodtype": "VEGGIE",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 40,
+    "hunger": 37.5,
+    "sanity": 5,
+    "cooktime": 1,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "jellybean_sanity",
+    "priority": 30,
+    "foodtype": "GOODIES",
+    "spoilage": null,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": true,
+    "health": 2,
+    "hunger": 0,
+    "sanity": 5,
+    "cooktime": 2.5,
+    "stacksize": 3,
+    "requires": [
+      {
+        "items": [
+          "royal_jelly"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "green_cap"
+        ],
+        "amount": 3,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "royal_jelly"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "green_cap"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "jellybean_hunger",
+    "priority": 30,
+    "foodtype": "GOODIES",
+    "spoilage": null,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": true,
+    "health": 2,
+    "hunger": 5,
+    "sanity": 0,
+    "cooktime": 2.5,
+    "stacksize": 3,
+    "requires": [
+      {
+        "items": [
+          "royal_jelly"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_inedible"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "royal_jelly"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "jellybean_super",
+    "priority": 30,
+    "foodtype": "GOODIES",
+    "spoilage": null,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": true,
+    "health": 2,
+    "hunger": 2,
+    "sanity": 2,
+    "cooktime": 2.5,
+    "stacksize": 3,
+    "requires": [
+      {
+        "items": [
+          "royal_jelly"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "dragonfruit"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "royal_jelly"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "dragonfruit"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "berrysundae",
+    "priority": 10,
+    "foodtype": "GOODIES",
+    "spoilage": 2880,
+    "temperature": -40,
+    "temperatureDuration": 480,
+    "debuff": true,
+    "health": 20,
+    "hunger": 8,
+    "sanity": 60,
+    "cooktime": 1,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "cinnamonroll",
+    "priority": 30,
+    "foodtype": "GOODIES",
+    "spoilage": 2880,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 80,
+    "hunger": 50,
+    "sanity": 20,
+    "cooktime": 2,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "milkshake_prismatic",
+    "priority": 10,
+    "foodtype": "GOODIES",
+    "spoilage": 2880,
+    "temperature": -40,
+    "temperatureDuration": 480,
+    "debuff": true,
+    "health": 60,
+    "hunger": 12.5,
+    "sanity": 60,
+    "cooktime": 1,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_jellyfish_rainbow_dead"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_milk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_jellyfish_rainbow_dead"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "nachos",
+    "priority": 35,
+    "foodtype": "VEGGIE",
+    "spoilage": 7200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 40,
+    "hunger": 32.5,
+    "sanity": 10,
+    "cooktime": 2,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_cheese"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cheese_yellow"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "tom_kha_soup",
+    "priority": 35,
+    "foodtype": "VEGGIE",
+    "spoilage": 4800,
+    "temperature": 40,
+    "temperatureDuration": 480,
+    "debuff": true,
+    "health": 5,
+    "hunger": 40,
+    "sanity": 33,
+    "cooktime": 2,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_kokonut_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_mushroom"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_kokonut_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "red_cap"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "risotto",
+    "priority": 35,
+    "foodtype": "VEGGIE",
+    "spoilage": 7200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 33,
+    "hunger": 75,
+    "sanity": 25,
+    "cooktime": 1.7,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "meatskillet",
+    "priority": 30,
+    "foodtype": "MEAT",
+    "spoilage": 7200,
+    "temperature": 40,
+    "temperatureDuration": 480,
+    "debuff": false,
+    "health": -5,
+    "hunger": 62.5,
+    "sanity": 15,
+    "cooktime": 2,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "warlyicedtea",
+    "priority": 30,
+    "foodtype": "GOODIES",
+    "spoilage": 4800,
+    "temperature": -40,
+    "temperatureDuration": 480,
+    "debuff": false,
+    "health": 20,
+    "hunger": 12.5,
+    "sanity": 5,
+    "cooktime": 0.5,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_piko_orange"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_piko_orange"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "warlytea",
+    "priority": 30,
+    "foodtype": "GOODIES",
+    "spoilage": 4800,
+    "temperature": 40,
+    "temperatureDuration": 480,
+    "debuff": true,
+    "health": 40,
+    "hunger": 25,
+    "sanity": 10,
+    "cooktime": 0.5,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_piko_orange"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "ice"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_piko_orange"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_tealeaf"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "lazydessert",
+    "priority": 1,
+    "foodtype": "ELEMENTAL",
+    "spoilage": null,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": true,
+    "health": -30,
+    "hunger": 12.5,
+    "sanity": 0,
+    "cooktime": 2,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "townportaltalisman"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "rocks"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "townportaltalisman"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "rocks"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "lavaeeggboiled",
+    "priority": 100,
+    "foodtype": "MEAT",
+    "spoilage": 7200,
+    "temperature": 40,
+    "temperatureDuration": 480,
+    "debuff": true,
+    "health": 60,
+    "hunger": 100,
+    "sanity": 15,
+    "cooktime": 2,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "lavae_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fireweed"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "ice"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "lavae_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "firenettles"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "tiramisu",
+    "priority": 30,
+    "foodtype": "GOODIES",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": true,
+    "health": 20,
+    "hunger": 32.5,
+    "sanity": 15,
+    "cooktime": 1.5,
+    "stacksize": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_coffeebeans_cooked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_chocolate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "kyno_coffeebeans"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_coffeebeans_cooked"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "chocolate_black"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1842 @@
+[
+  {
+    "name": "festive_berrysauce",
+    "priority": 35,
+    "foodtype": "VEGGIE",
+    "spoilage": 2880,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 10,
+    "hunger": 25,
+    "sanity": 15,
+    "cooktime": 1,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_bibingka",
+    "priority": 35,
+    "foodtype": "VEGGIE",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 20,
+    "hunger": 20,
+    "sanity": 0,
+    "cooktime": 1.3,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_cabbagerolls",
+    "priority": 30,
+    "foodtype": "VEGGIE",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 5,
+    "hunger": 32.5,
+    "sanity": 15,
+    "cooktime": 1.5,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_waterycress"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_waterycress"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_fishdish",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 3840,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 30,
+    "hunger": 62.5,
+    "sanity": 1,
+    "cooktime": 2,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_wobster"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "pondfish"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_goodgravy",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 7200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 5,
+    "hunger": 32.5,
+    "sanity": 15,
+    "cooktime": 1.5,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_latkes",
+    "priority": 30,
+    "foodtype": "VEGGIE",
+    "spoilage": 2880,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 5,
+    "hunger": 50,
+    "sanity": 20,
+    "cooktime": 0.8,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 3,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_lutefisk",
+    "priority": 30,
+    "foodtype": "MEAT",
+    "spoilage": 3840,
+    "temperature": 40,
+    "temperatureDuration": 10,
+    "debuff": false,
+    "health": 5,
+    "hunger": 75,
+    "sanity": 5,
+    "cooktime": 1.5,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pondeel"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "foliage"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_mulledpunch",
+    "priority": 35,
+    "foodtype": "GOODIES",
+    "spoilage": 4800,
+    "temperature": -40,
+    "temperatureDuration": 10,
+    "debuff": false,
+    "health": 15,
+    "hunger": 12.5,
+    "sanity": 33,
+    "cooktime": 2,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_syrup"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_forgetweed"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_berries"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "cutlichen"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_syrup"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_panettone",
+    "priority": 30,
+    "foodtype": "VEGGIE",
+    "spoilage": 19200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 20,
+    "hunger": 32.5,
+    "sanity": 15,
+    "cooktime": 2,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_pavlova",
+    "priority": 30,
+    "foodtype": "VEGGIE",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 40,
+    "hunger": 25,
+    "sanity": 5,
+    "cooktime": 1.5,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_banana"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_pickledherring",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 3840,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 40,
+    "hunger": 37.5,
+    "sanity": 0,
+    "cooktime": 1.5,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_fish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "pondfish"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_polishcookies",
+    "priority": 35,
+    "foodtype": "GOODIES",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 40,
+    "hunger": 12.5,
+    "sanity": 5,
+    "cooktime": 0.8,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_pumpkinpie",
+    "priority": 30,
+    "foodtype": "VEGGIE",
+    "spoilage": 7200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 20,
+    "hunger": 62.5,
+    "sanity": 10,
+    "cooktime": 1.8,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "pumpkin"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pumpkin"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_roastedturkey",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 10,
+    "hunger": 80,
+    "sanity": 20,
+    "cooktime": 1,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_succulent"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "drumstick"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "succulent_picked"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_stuffing",
+    "priority": 30,
+    "foodtype": "VEGGIE",
+    "spoilage": 7200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 15,
+    "hunger": 32.5,
+    "sanity": 20,
+    "cooktime": 1.5,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_veggie"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_fruit"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_sweetpotato",
+    "priority": 35,
+    "foodtype": "VEGGIE",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 20,
+    "hunger": 37.5,
+    "sanity": 20,
+    "cooktime": 1,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sweetpotato"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sweetpotato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_tamales",
+    "priority": 30,
+    "foodtype": "VEGGIE",
+    "spoilage": 7200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 5,
+    "hunger": 20,
+    "sanity": 50,
+    "cooktime": 2,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "festive_tourtiere",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 19200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 25,
+    "hunger": 50,
+    "sanity": 15,
+    "cooktime": 2,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_bacon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_bacon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "spooky_brain_noodles",
+    "priority": 35,
+    "foodtype": "MEAT",
+    "spoilage": 7200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 10,
+    "hunger": 32.5,
+    "sanity": 30,
+    "cooktime": 1.2,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_beanbugs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_beanbugs"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "meat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "spooky_burgerzilla",
+    "priority": 30,
+    "foodtype": "MONSTER",
+    "spoilage": 3840,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": -20,
+    "hunger": 80,
+    "sanity": -20,
+    "cooktime": 1.5,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 20,
+    "monstersanity": 20,
+    "requires": [
+      {
+        "items": [
+          "tag_bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_monster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_cucumber"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "bread"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "monstermeat"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_cucumber"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "spooky_deadbread",
+    "priority": 35,
+    "foodtype": "VEGGIE",
+    "spoilage": 19200,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 40,
+    "hunger": 65,
+    "sanity": -30,
+    "cooktime": 2,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "boneshard"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "boneshard"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "butter"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "spooky_jellybeans",
+    "priority": 35,
+    "foodtype": "GOODIES",
+    "spoilage": null,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": true,
+    "health": 15,
+    "hunger": 15,
+    "sanity": 0,
+    "cooktime": 2.5,
+    "stacksize": 3,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "royal_jelly"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "nightmarefuel"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "royal_jelly"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "nightmarefuel"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "spooky_popsicle",
+    "priority": 35,
+    "foodtype": "GOODIES",
+    "spoilage": 2880,
+    "temperature": -40,
+    "temperatureDuration": 480,
+    "debuff": false,
+    "health": 40,
+    "hunger": 12.5,
+    "sanity": -20,
+    "cooktime": 1,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "livinglog"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "livinglog"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "spooky_pumpkincream",
+    "priority": 30,
+    "foodtype": "VEGGIE",
+    "spoilage": 4800,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 40,
+    "hunger": 62.5,
+    "sanity": 25,
+    "cooktime": 2,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "pumpkin"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_pineapple_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_dairy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "pumpkin_cooked"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "pumpkin"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_pineapple_halved"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "spooky_skullcandy",
+    "priority": 35,
+    "foodtype": "GOODIES",
+    "spoilage": null,
+    "temperature": null,
+    "temperatureDuration": null,
+    "debuff": false,
+    "health": 5,
+    "hunger": 15,
+    "sanity": -15,
+    "cooktime": 1.5,
+    "stacksize": 2,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "boneshard"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 2,
+        "comparator": "morethan"
+      },
+      {
+        "items": [
+          "nightmarefuel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "boneshard"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_sugar"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "nightmarefuel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  },
+  {
+    "name": "spooky_tacodile",
+    "priority": 35,
+    "foodtype": "VEGGIE",
+    "spoilage": 7200,
+    "temperature": 40,
+    "temperatureDuration": 480,
+    "debuff": false,
+    "health": 15,
+    "hunger": 50,
+    "sanity": 10,
+    "cooktime": 1.7,
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_flour"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
+  }
+]

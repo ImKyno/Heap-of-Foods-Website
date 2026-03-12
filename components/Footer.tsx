@@ -4,6 +4,7 @@ import { useTranslation } from "@/lib/i18n";
 import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord, faSteam, faKoFi } from "@fortawesome/free-brands-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export function Footer() {
   const { t } = useTranslation();
@@ -52,7 +53,7 @@ export function Footer() {
           <div className="w-full h-[2px] bg-zinc-300 dark:bg-zinc-600" />
 
           <p className="text-sm text-grey text-center whitespace-pre-line max-w-2xl">
-            {t("footer.description")}
+            {t("footer.description")} <FontAwesomeIcon icon={faHeart} />
           </p>
 
           <p className="text-sm">
