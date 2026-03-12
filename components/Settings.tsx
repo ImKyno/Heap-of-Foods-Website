@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import { t, useTranslation, type Locale } from "@/lib/i18n";
 import { usePageTitle } from "@/components/PageTitle";
