@@ -3,6 +3,8 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
 import recipes from "@/data/recipes_cookpot_warly.json";
+import { recommendRecipe } from "@/lib/recommend";
+import SeeAlso from "@/components/SeeAlso";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -881,6 +883,20 @@ export default function CookPotWarly() {
                 />
               </Block>
             )}
+            {(() => {
+              const suggestion = recommendRecipe(selected, recipes);
+              return suggestion ? (
+                <SeeAlso
+                  suggested={suggestion}
+                  imageBasePath="/foods_cookpot_warly"
+                  translationPrefix="recipes_warly"
+                  onSelect={(recipe) => {
+                    setSelected(null);
+                    selectRecipe(recipe);
+                  }}
+                />
+              ) : null;
+            })()}
           </div>
         </div>
       )}

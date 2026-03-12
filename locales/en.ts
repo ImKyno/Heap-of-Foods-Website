@@ -1148,7 +1148,11 @@ const en = {
     tillweed: "Tillweed",
     veggie: "Veggie",
     wobster: "Wobster",
-  }
+  },
+
+  seealso: {
+    label: "See also",
+  },
 }
 
 export default en
