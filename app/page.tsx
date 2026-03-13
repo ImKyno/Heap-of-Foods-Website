@@ -328,11 +328,12 @@ export default function HomePage() {
 
         <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20" />
 
-        <div className="flex justify-center items-center p-7">
-          <DailyRecipe/>
+        {/* DAILY RECIPE */}
+        <div className="flex justify-center items-center px-4 py-7 w-full">
+          <DailyRecipe />
         </div>
 
-        <div className="w-263 h-1 bg-zinc-700/20 dark:bg-white/20" />
+        <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20" />
 
         {/* EXTERNAL LINKS */}
         <div className="flex flex-wrap justify-center m-6 gap-6 mb-10 w-full">

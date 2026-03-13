@@ -116,25 +116,25 @@ export default function DailyRecipe() {
 
   return (
     <div className="flex flex-col items-center gap-2 w-full">
-      <h1 className="text-4xl font-bold text-zinc-900 dark:text-white text-center drop-shadow-md">
+      <h1 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white text-center drop-shadow-md">
         {t("pages.home.daily.title")}
       </h1>
 
-      <div className="text-zinc-900 dark:text-white text-center font-semibold text-lg drop-shadow-md">
+      <div className="text-zinc-900 dark:text-white text-center font-semibold text-base sm:text-lg drop-shadow-md">
         {t("pages.home.daily.timer")} {timerText}
       </div>
 
-      <div className="bg-white dark:bg-zinc-900 rounded-xl p-6 flex items-center gap-6 w-full max-w-4xl shadow-md">
+      <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full max-w-4xl shadow-md">
         <img
           src={`/${recipe.icon}/${recipe.name}.png`}
-          className="w-32 h-32 object-contain"
+          className="w-24 h-24 sm:w-32 sm:h-32 object-contain flex-shrink-0"
         />
         <div className="flex flex-col flex-1 gap-4 items-center text-center">
           <div className="flex flex-col gap-1 items-center">
-            <h2 className="text-2xl font-bold">{t(`${recipe.prefix}.${recipe.name}`)}</h2>
+            <h2 className="text-xl sm:text-2xl font-bold">{t(`${recipe.prefix}.${recipe.name}`)}</h2>
 
-            <div className="flex items-center gap-2">
-              <img src={source.icon} className="w-8 h-8 object-contain" />
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <img src={source.icon} className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
               <span className="text-zinc-700 dark:text-zinc-300 font-semibold">{source.name}</span>
 
               <button
@@ -156,7 +156,7 @@ export default function DailyRecipe() {
           </div>
 
           {/* Status da comida */}
-          <div className="flex gap-2 justify-center">
+          <div className="flex gap-2 justify-center flex-wrap">
             <Stat icon="/icons/cooking/icon_health.png" value={recipe.health} tooltip={t("tooltips.health")} isStatus />
             <Stat icon="/icons/cooking/icon_hunger.png" value={recipe.hunger} tooltip={t("tooltips.hunger")} isStatus />
             <Stat icon="/icons/cooking/icon_sanity.png" value={recipe.sanity} tooltip={t("tooltips.sanity")} isStatus />
@@ -243,8 +243,8 @@ function Stat({ icon, value, tooltip, isStatus = false, recipe, stat }: any) {
   }));
 
   return (
-    <div className="relative group flex items-center gap-3 min-w-[120px] justify-center">
-      <img src={icon} className="w-9 h-9 object-contain" />
+    <div className="relative group flex items-center gap-3 min-w-[100px] sm:min-w-[120px] justify-center">
+      <img src={icon} className="w-8 h-8 sm:w-9 sm:h-9 object-contain" />
 
       <div className="flex flex-col items-center leading-tight">
         {/* valor normal */}
