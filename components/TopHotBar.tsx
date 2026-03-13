@@ -26,51 +26,50 @@ export default function TopHotBar() {
   return (
     <div
       key={locale}
-      className="fixed top-0 left-0 w-full z-50 bg-zinc-200 dark:bg-zinc-900 shadow-md">
-      <div className="flex items-center justify-between p-1 sm:p-2">
-        {/* HOME */}
-        <div className="flex items-center">
-          <Link href="/">
-            <button className="flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
-              <FontAwesomeIcon icon={faHouse} className="w-6 h-6" />
-            </button>
-          </Link>
-        </div>
-
-        {/* NAV LINKS — desktop only */}
-        <div className="hidden md:flex items-center justify-center gap-1 sm:gap-2">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
-                <img src={link.icon} className="w-6 h-6 object-contain" />
-                {link.label}
-              </button>
-            </Link>
-          ))}
-        </div>
-
-        {/* RIGHT: SETTINGS + HAMBURGER */}
-        <div className="flex items-center gap-1 sm:gap-2">
-          <Link href="/settings">
-            <button className="flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
-              <FontAwesomeIcon icon={faGear} className="w-6 h-6" />
-            </button>
-          </Link>
-
-          {/* HAMBURGER — mobile only */}
-          <button
-            className="md:hidden flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer"
-            onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label="Toggle navigation menu"
-          >
-            <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} className="w-6 h-6" />
+      className="fixed top-0 left-0 w-full z-50 bg-zinc-200 dark:bg-zinc-900 shadow-md flex items-center justify-between p-2"
+    >
+      {/* ESQUERDA: HOME */}
+      <div className="flex items-center">
+        <Link href="/">
+          <button className="flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer drop-shadow-md">
+            <FontAwesomeIcon icon={faHouse} className="w-6 h-6" />
           </button>
-        </div>
+        </Link>
       </div>
 
-      {/* MOBILE DROPDOWN MENU */}
+      {/* CENTRO: NAV LINKS (desktop) */}
+      <div className="hidden md:flex items-center justify-center gap-1 sm:gap-2 drop-shadow-md">
+        {navLinks.map((link) => (
+          <Link key={link.href} href={link.href}>
+            <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
+              <img src={link.icon} className="w-6 h-6 object-contain" />
+              {link.label}
+            </button>
+          </Link>
+        ))}
+      </div>
+
+      {/* DIREITA: SETTINGS + HAMBURGER */}
+      <div className="flex items-center gap-1 sm:gap-2">
+        <Link href="/settings">
+          <button className="flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
+            <FontAwesomeIcon icon={faGear} className="w-6 h-6" />
+          </button>
+        </Link>
+
+        {/* HAMBURGER — mobile only */}
+        <button
+          className="md:hidden flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle navigation menu"
+        >
+          <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* MENU MOBILE DROPDOWN */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col gap-1 px-2 pb-2 bg-zinc-200 dark:bg-zinc-900">
+        <div className="absolute top-full left-0 w-full bg-zinc-200 dark:bg-zinc-900 shadow-md flex flex-col gap-1 px-2 pb-2 md:hidden animate-fade-in z-50">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
               <button className="w-full flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
