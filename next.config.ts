@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  basePath: "/heap-of-foods-the-recipe-book",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
