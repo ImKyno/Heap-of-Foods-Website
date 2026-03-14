@@ -126,7 +126,7 @@ export default function DailyRecipe() {
   }
 
   return (
-    <div className="flex flex-col items-center gap-2 max-w-4xl">
+    <div className="flex flex-col items-center gap-2 w-full">
       <h1 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white text-center drop-shadow-md">
         {t("pages.home.daily.title")}
       </h1>
@@ -138,7 +138,7 @@ export default function DailyRecipe() {
       <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full max-w-4xl shadow-md">
         <img
           src={getAssetPath(`/${recipe.icon}/${recipe.name}.png`)}
-          className="w-24 h-24 sm:w-35 sm:h-35 object-contain flex-shrink-0 sm:ml-8"
+          className="w-24 h-24 sm:w-32 sm:h-32 object-contain flex-shrink-0"
         />
         <div className="flex flex-col flex-1 gap-4 items-center text-center">
           <div className="flex flex-col gap-1 items-center">
