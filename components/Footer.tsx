@@ -36,6 +36,8 @@ export function Footer() {
               <span className="hidden sm:inline">{t("footer.workshop")}</span>
             </a>
 
+            <span className="text-zinc-400 dark:text-zinc-600 select-none">|</span>
+
             <a
               href="https://discord.gg/jjNr4Vvutn"
               target="_blank"
@@ -46,6 +48,8 @@ export function Footer() {
               <span className="hidden sm:inline">{t("footer.discord")}</span>
             </a>
 
+            <span className="text-zinc-400 dark:text-zinc-600 select-none">|</span>
+
             <Link
               href="/contributors"
               className="flex items-center gap-2 hover:text-grey transition"
@@ -53,6 +57,8 @@ export function Footer() {
               <FontAwesomeIcon icon={faUsers} />
               <span className="hidden sm:inline">{t("footer.contributors")}</span>
             </Link>
+
+            <span className="text-zinc-400 dark:text-zinc-600 select-none">|</span>
 
             <a
               href="https://ko-fi.com/kynoox"
