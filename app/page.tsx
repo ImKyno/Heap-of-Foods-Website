@@ -294,7 +294,7 @@ export default function HomePage() {
         </div>
 
         {/* CATEGORIES */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-20 mb-6 w-full justify-items-center drop-shadow-md">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6 w-full drop-shadow-md">
           <CategoryCard
             icon={getAssetPath("/icons/misc/icon_cookpot.png")}
             label={t("main.cookpot")}
@@ -330,7 +330,7 @@ export default function HomePage() {
         <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20" />
 
         {/* DAILY RECIPE */}
-        <div className="flex justify-center items-center px-4 pt-2 pb-5 w-full">
+        <div className="flex justify-center items-center px-4 py-7 w-full">
           <DailyRecipe />
         </div>
 

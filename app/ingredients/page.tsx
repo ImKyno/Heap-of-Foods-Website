@@ -488,7 +488,8 @@ function IngredientsContent() {
       <div className="max-w-full pt-14"></div>
       {/* STICKY SEARCH + FILTER + SORT + BACK TO TOP */}
       <div className="sticky top-14 z-40 bg-zinc-300 dark:bg-zinc-800 shadow-md">
-        <div className="max-w-4xl mx-auto p-1 sm:p-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="max-w-4xl mx-auto px-1 pt-0 pb-1 sm:px-2 sm:py-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+          {/* SEARCH - Agora alinhado horizontalmente */}
           <div className="relative w-full max-w-sm">
             <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-zinc-500 dark:text-white">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -537,7 +538,7 @@ function IngredientsContent() {
                 ref={dropdownRef}
                 className="absolute top-full mt-2 w-full bg-white dark:bg-zinc-900 rounded-xl shadow-xl overflow-hidden z-50"
               >
-                <div className="max-h-80 overflow-y-auto overscroll-contain">
+                <div className="max-h-80 overflow-y-auto overscroll-contain hide-scrollbar">
                   {searchedIngredients.length === 0 && (
                     <div className="px-4 py-3 text-sm text-zinc-500 dark:text-white italic">
                       {t("search.notfound.ingredient")}
@@ -763,9 +764,9 @@ function IngredientsContent() {
         </div>
       </div>
       {/* CARD GRID */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-5 font-bold m-6 select-none relative">
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-5 font-bold m-6 select-none relative">
         {sortedIngredients.length === 0 && (
-          <div className="col-span-full flex flex-col items-center justify-center text-center py-40">
+          <div className="w-full flex flex-col items-center justify-center text-center py-40">
             <FontAwesomeIcon
               icon={faFilterCircleXmark}
               className="text-7xl mb-4 text-zinc-700 dark:text-zinc-500 opacity-80"
@@ -792,7 +793,7 @@ function IngredientsContent() {
             key={ingredient.name}
             id={`ingredient-${ingredient.name}`}
             onClick={() => setSelected(ingredient)}
-            className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition shadow-sm dark:shadow-none"
+            className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition shadow-sm dark:shadow-none w-full sm:w-48"
           >
             <img
               src={getAssetPath(`/icons/ingredients/ingredient_${ingredient.name}.png`)}
@@ -848,7 +849,7 @@ function IngredientsContent() {
                 </button>
               )}
               <div
-                className="bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto relative shadow-xl dark:shadow-none"
+                className="bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto hide-scrollbar relative shadow-xl dark:shadow-none"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex justify-end">
