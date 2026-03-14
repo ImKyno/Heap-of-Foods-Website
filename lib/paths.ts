@@ -6,7 +6,7 @@
  * The basePath is set via next.config.ts
  */
 export function getAssetPath(path: string): string {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/Heap-of-Foods-Recipe-Book";
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   
   return `${basePath}${cleanPath}`;
