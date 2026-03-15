@@ -35,10 +35,12 @@ interface RandomRecipeButtonProps {
 export default function RandomRecipe({interval = 500, onSelectItem, }: RandomRecipeButtonProps) {
   const { t } = useTranslation();
 
-  const [iconIndex, setIconIndex] = useState(
-    Math.floor(Math.random() * allRecipeIcons.length)
-  );
+  const [iconIndex, setIconIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    setIconIndex(Math.floor(Math.random() * allRecipeIcons.length));
+  }, []);
 
   useEffect(() => {
     if (!hovered) return;

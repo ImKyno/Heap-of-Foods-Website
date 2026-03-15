@@ -8,6 +8,8 @@ import { usePageTitle } from "@/components/PageTitle";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import ingredients from "@/data/ingredients.json";
+import SkeletonImage from "@/components/SkeletonImage";
+import AnimatedOverlay from "@/components/AnimatedOverlay";
 import Fuse from "fuse.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -795,9 +797,9 @@ function IngredientsContent() {
             onClick={() => setSelected(ingredient)}
             className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition shadow-sm dark:shadow-none w-full sm:w-48"
           >
-            <img
+            <SkeletonImage
               src={getAssetPath(`/icons/ingredients/ingredient_${ingredient.name}.png`)}
-              className="w-15"
+              className="w-15 h-15"
             />
             <h2 className="text-center font-semibold text-lg text-zinc-900 dark:text-white">
               {t(`ingredients.${ingredient.name}`)}
@@ -815,27 +817,24 @@ function IngredientsContent() {
         ))}
       </div>
       {/* SELECTED CARD */}
-      {selected &&
-        (() => {
-          const variants = [
-            { type: "normal", enabled: true, label: t("card.values.raw") },
-            {
-              type: "cooked",
-              enabled: selected.cooked,
-              label: t("card.values.cooked"),
-            },
-            {
-              type: "dried",
-              enabled: selected.dried,
-              label: t("card.values.dried"),
-            },
-          ].filter((v) => v.enabled);
+      <AnimatedOverlay isOpen={!!selected} onClose={() => setSelected(null)}>
+        {selected &&
+          (() => {
+            const variants = [
+              { type: "normal", enabled: true, label: t("card.values.raw") },
+              {
+                type: "cooked",
+                enabled: selected.cooked,
+                label: t("card.values.cooked"),
+              },
+              {
+                type: "dried",
+                enabled: selected.dried,
+                label: t("card.values.dried"),
+              },
+            ].filter((v) => v.enabled);
 
-          return (
-            <div
-              className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-              onClick={() => setSelected(null)}
-            >
+            return (<>
               {/* PREVIOUS */}
               {selectedIndex > 0 && (
                 <button
@@ -849,7 +848,7 @@ function IngredientsContent() {
                 </button>
               )}
               <div
-                className="bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto hide-scrollbar relative shadow-xl dark:shadow-none"
+                className="recipe-popup-panel bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto hide-scrollbar relative shadow-xl dark:shadow-none"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex justify-end">
@@ -880,9 +879,9 @@ function IngredientsContent() {
                       key={variant.type}
                       className="flex flex-col items-center"
                     >
-                      <img
+                      <SkeletonImage
                         src={getAssetPath(`/icons/ingredients/ingredient_${selected.name}${variant.type === "normal" ? "" : `_${variant.type}`}.png`)}
-                        className="w-20 h-20 object-contain"
+                        className="w-20 h-20"
                       />
                       <span className="text-sm font-semibold text-zinc-900 dark:text-white mt-1 text-center">
                         {variant.type === "normal"
@@ -966,9 +965,9 @@ function IngredientsContent() {
                   <FontAwesomeIcon icon={faCircleChevronRight} />
                 </button>
               )}
-            </div>
-          );
-        })()}
+            </>);
+          })()}
+      </AnimatedOverlay>
     </div>
   );
 }

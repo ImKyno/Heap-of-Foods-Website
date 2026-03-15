@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import recipes from "@/data/recipes_cookpot_warly.json";
 import { recommendRecipe } from "@/lib/recommend";
 import SeeAlso from "@/components/SeeAlso";
+import AnimatedOverlay from "@/components/AnimatedOverlay";
+import SkeletonImage from "@/components/SkeletonImage";
 import Fuse from "fuse.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -781,9 +783,9 @@ export default function CookPotWarly() {
             onClick={() => setSelected(recipe)}
             className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition shadow-sm dark:shadow-none w-full sm:w-64"
           >
-            <img
+            <SkeletonImage
               src={getAssetPath(`/foods_cookpot_warly/${recipe.name}.png`)}
-              className="w-24"
+              className="w-24 h-24"
             />
             <h2 className="text-center font-semibold text-lg text-zinc-900 dark:text-white">
               {t(`recipes_warly.${recipe.name}`)}
@@ -813,11 +815,8 @@ export default function CookPotWarly() {
         ))}
       </div>
       {/* SELECTED CARD */}
-      {selected && (
-        <div
-          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-          onClick={() => setSelected(null)}
-        >
+      <AnimatedOverlay isOpen={!!selected} onClose={() => setSelected(null)}>
+        {selected && (<>
           {/* PREVIOUS */}
           {selectedIndex > 0 && (
             <button
@@ -831,7 +830,7 @@ export default function CookPotWarly() {
             </button>
           )}
           <div
-            className="bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto hide-scrollbar relative shadow-xl dark:shadow-none"
+            className="recipe-popup-panel bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto hide-scrollbar relative shadow-xl dark:shadow-none"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-end">
@@ -855,9 +854,9 @@ export default function CookPotWarly() {
               </button>
             </div>
 
-            <img
+            <SkeletonImage
               src={getAssetPath(`/foods_cookpot_warly/${selected.name}.png`)}
-              className="w-24 mx-auto mb-4"
+              className="w-24 h-24 mx-auto mb-4"
             />
 
             <h2 className="text-center text-2xl font-semibold">
@@ -1006,8 +1005,8 @@ export default function CookPotWarly() {
               <FontAwesomeIcon icon={faCircleChevronRight} />
             </button>
           )}
-        </div>
-      )}
+        </>)}
+      </AnimatedOverlay>
     </div>
   );
 }
