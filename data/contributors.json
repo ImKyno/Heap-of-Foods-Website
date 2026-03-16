@@ -32,7 +32,7 @@
   {
     "name": "Fliphe",
     "image": "/icons/contributors/contributor_fliphe.png",
-    "badges": ["contributors.badges.modartist"]
+    "badges": ["contributors.badges.modartist", "contributors.badges.modtester"]
   },
   {
     "name": "Francierton Games",
@@ -69,6 +69,11 @@
     "badges": ["contributors.badges.donator"]
   },
   {
+    "name": "Malthy",
+    "image": "/icons/contributors/contributor_malthy.png",
+    "badges": ["contributors.badges.donator"]
+  },
+  {
     "name": "Milanjorim7",
     "image": "/icons/contributors/contributor_milanjorim7.png",
     "badges": ["contributors.badges.modartist"],
@@ -93,6 +98,11 @@
   {
     "name": "Raccoon",
     "image": "/icons/contributors/contributor_raccoon.png",
+    "badges": ["contributors.badges.donator"]
+  },
+  {
+    "name": "Rodra",
+    "image": "/icons/contributors/contributor_rodra.png",
     "badges": ["contributors.badges.donator"]
   },
   {
